@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "title": "حيّاك آسيا 2030 - دورة الألعاب الآسيوية قطر",
+    "description": "دليلك لدورة الألعاب الآسيوية 2030 في قطر. استكشف الفعاليات والأماكن والتذاكر والمزيد."
+  },
+  "common": {
+    "search": "بحث",
+    "searchPlaceholder": "ابحث عن الفعاليات والأماكن والرياضات...",
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ ما",
+    "retry": "حاول مرة أخرى",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "viewAll": "عرض الكل",
+    "learnMore": "اعرف المزيد",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "share": "مشاركة",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "clear": "مسح",
+    "apply": "تطبيق",
+    "reset": "إعادة تعيين",
+    "showMore": "عرض المزيد",
+    "showLess": "عرض أقل",
+    "today": "اليوم",
+    "tomorrow": "غداً",
+    "now": "الآن",
+    "live": "مباشر",
+    "upcoming": "قادم",
+    "past": "منتهي"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "events": "الفعاليات",
+    "venues": "الأماكن",
+    "tickets": "التذاكر",
+    "transport": "المواصلات",
+    "culture": "الثقافة",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "notifications": "الإشعارات",
+    "help": "المساعدة",
+    "emergency": "الطوارئ"
+  },
+  "accessibility": {
+    "skipToContent": "الانتقال إلى المحتوى الرئيسي",
+    "skipToNavigation": "الانتقال إلى التنقل",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "languageSelector": "اختر اللغة",
+    "currentLanguage": "اللغة الحالية: {language}",
+    "switchToLanguage": "التحويل إلى {language}",
+    "darkMode": "الوضع الداكن",
+    "lightMode": "الوضع الفاتح",
+    "highContrast": "تباين عالي",
+    "reducedMotion": "تقليل الحركة",
+    "largerText": "نص أكبر"
+  },
+  "home": {
+    "welcome": "مرحباً بكم في دورة الألعاب الآسيوية 2030",
+    "location": "الدوحة، قطر",
+    "tagline": "عش أكبر حدث رياضي في آسيا",
+    "quickAccess": {
+      "events": "الفعاليات",
+      "eventsDesc": "تصفح جميع الفعاليات الرياضية",
+      "venues": "الأماكن",
+      "venuesDesc": "استكشف الملاعب والصالات",
+      "tickets": "التذاكر",
+      "ticketsDesc": "احصل على تذاكرك",
+      "transport": "المواصلات",
+      "transportDesc": "خطط لرحلتك"
+    },
+    "liveTicker": {
+      "title": "مباشر الآن",
+      "noLiveEvents": "لا توجد فعاليات مباشرة حالياً"
+    },
+    "recommendations": {
+      "title": "موصى به لك",
+      "empty": "ابدأ الاستكشاف للحصول على توصيات مخصصة"
+    },
+    "todayHighlights": {
+      "title": "أبرز فعاليات اليوم",
+      "noEvents": "لا توجد فعاليات مميزة اليوم"
+    },
+    "culturalExplorer": {
+      "title": "اكتشف آسيا",
+      "subtitle": "استكشف ثقافات من جميع أنحاء القارة",
+      "explore": "استكشف"
+    },
+    "ecoTransport": {
+      "title": "طرق خضراء للتنقل",
+      "carbonSaved": "الكربون الموفر اليوم: {amount}",
+      "metro": "المترو",
+      "bus": "الحافلة",
+      "bike": "الدراجة",
+      "shuttle": "الحافلة المكوكية"
+    }
+  },
+  "events": {
+    "title": "الفعاليات",
+    "subtitle": "استكشف جميع الفعاليات الرياضية",
+    "filters": {
+      "sport": "الرياضة",
+      "date": "التاريخ",
+      "venue": "المكان",
+      "priceRange": "نطاق السعر",
+      "availability": "التوفر",
+      "medalEvent": "فعاليات الميداليات فقط"
+    },
+    "sort": {
+      "date": "التاريخ",
+      "popularity": "الشعبية",
+      "price": "السعر"
+    },
+    "status": {
+      "scheduled": "مجدول",
+      "live": "مباشر",
+      "completed": "منتهي",
+      "cancelled": "ملغي",
+      "postponed": "مؤجل"
+    },
+    "types": {
+      "preliminary": "تمهيدي",
+      "semifinal": "نصف النهائي",
+      "final": "النهائي",
+      "groupStage": "دور المجموعات",
+      "knockout": "خروج المغلوب"
+    },
+    "card": {
+      "from": "من",
+      "seatsLeft": "{count} مقاعد متبقية",
+      "soldOut": "نفدت التذاكر",
+      "getTickets": "احصل على التذاكر",
+      "addToCalendar": "أضف إلى التقويم",
+      "setReminder": "ضع تذكيراً"
+    },
+    "detail": {
+      "about": "عن هذه الفعالية",
+      "schedule": "الجدول",
+      "participants": "المشاركون",
+      "venue": "المكان",
+      "howToGetThere": "كيفية الوصول",
+      "similarEvents": "فعاليات مشابهة"
+    }
+  },
+  "venues": {
+    "title": "الأماكن",
+    "subtitle": "استكشف الملاعب والصالات",
+    "filters": {
+      "type": "نوع المكان",
+      "sport": "الرياضة",
+      "accessibility": "مميزات الوصول"
+    },
+    "types": {
+      "stadium": "ملعب",
+      "arena": "صالة",
+      "aquaticCenter": "مركز مائي",
+      "velodrome": "مضمار دراجات",
+      "sportsComplex": "مجمع رياضي"
+    },
+    "card": {
+      "capacity": "السعة: {count}",
+      "events": "{count} فعاليات",
+      "viewEvents": "عرض الفعاليات",
+      "getDirections": "الحصول على الاتجاهات"
+    },
+    "detail": {
+      "about": "عن هذا المكان",
+      "upcomingEvents": "الفعاليات القادمة",
+      "facilities": "المرافق",
+      "accessibility": "إمكانية الوصول",
+      "gettingThere": "كيفية الوصول",
+      "seating": "دليل المقاعد",
+      "emergencyExits": "مخارج الطوارئ"
+    },
+    "accessibility": {
+      "wheelchairAccess": "وصول الكراسي المتحركة",
+      "hearingLoop": "حلقة السمع",
+      "brailleSignage": "لافتات بريل",
+      "accessibleParking": "مواقف سيارات مخصصة",
+      "assistanceDogs": "الكلاب المساعدة مرحب بها"
+    }
+  },
+  "tickets": {
+    "title": "تذاكري",
+    "subtitle": "تذاكر فعالياتك",
+    "empty": "ليس لديك أي تذاكر بعد",
+    "browseEvents": "تصفح الفعاليات",
+    "status": {
+      "active": "نشط",
+      "used": "مستخدم",
+      "expired": "منتهي الصلاحية",
+      "cancelled": "ملغي",
+      "refunded": "مسترد"
+    },
+    "card": {
+      "viewTicket": "عرض التذكرة",
+      "showQR": "عرض رمز QR",
+      "addToWallet": "أضف إلى المحفظة",
+      "getDirections": "احصل على الاتجاهات",
+      "seatInfo": "القسم {section}، الصف {row}، المقعد {seat}"
+    },
+    "purchase": {
+      "selectSeats": "اختر المقاعد",
+      "seatSelection": "اختيار المقعد",
+      "checkout": "الدفع",
+      "payment": "الدفع",
+      "confirmation": "التأكيد",
+      "total": "المجموع",
+      "serviceFee": "رسوم الخدمة",
+      "subtotal": "المجموع الفرعي"
+    }
+  },
+  "transport": {
+    "title": "المواصلات",
+    "subtitle": "خطط لرحلتك",
+    "tabs": {
+      "routes": "المسارات",
+      "nearby": "القريبة",
+      "eco": "الخيارات البيئية"
+    },
+    "types": {
+      "metro": "المترو",
+      "bus": "الحافلة",
+      "shuttle": "حافلة الفعاليات",
+      "bicycle": "الدراجة",
+      "walking": "المشي",
+      "taxi": "التاكسي"
+    },
+    "route": {
+      "departure": "المغادرة",
+      "arrival": "الوصول",
+      "duration": "المدة",
+      "changes": "{count} تغييرات",
+      "direct": "مباشر",
+      "frequency": "كل {minutes} دقيقة",
+      "nextArrival": "القادم خلال {minutes} دقيقة",
+      "carbonSaving": "وفر {amount} من الكربون"
+    },
+    "eco": {
+      "title": "الخيارات الصديقة للبيئة",
+      "description": "قلل من بصمتك الكربونية",
+      "carbonRating": "تصنيف الكربون",
+      "greenChoice": "الخيار الأخضر"
+    }
+  },
+  "culture": {
+    "title": "مستكشف الثقافات",
+    "subtitle": "اكتشف ثقافات آسيا الغنية",
+    "regions": {
+      "eastAsia": "شرق آسيا",
+      "southAsia": "جنوب آسيا",
+      "southeastAsia": "جنوب شرق آسيا",
+      "westAsia": "غرب آسيا",
+      "centralAsia": "وسط آسيا"
+    },
+    "country": {
+      "highlights": "أبرز المعالم الثقافية",
+      "traditions": "التقاليد",
+      "cuisine": "المطبخ",
+      "arts": "الفنون والحرف",
+      "sports": "الرياضات التقليدية",
+      "athletes": "الرياضيون المشاركون"
+    }
+  },
+  "emergency": {
+    "title": "الطوارئ",
+    "subtitle": "احصل على المساعدة بسرعة",
+    "button": "اتصال الطوارئ",
+    "contacts": {
+      "police": "الشرطة",
+      "ambulance": "الإسعاف",
+      "fire": "الإطفاء",
+      "embassy": "السفارة",
+      "lostFound": "المفقودات",
+      "medicalCenter": "المركز الطبي",
+      "security": "أمن الفعالية"
+    },
+    "actions": {
+      "call": "اتصل",
+      "shareLocation": "شارك موقعي",
+      "reportIncident": "أبلغ عن حادث"
+    },
+    "nearestServices": "أقرب الخدمات",
+    "yourLocation": "موقعك"
+  },
+  "seatGuide": {
+    "title": "دليل المقاعد",
+    "subtitle": "اعثر على مقعدك المثالي",
+    "filters": {
+      "accessibility": "احتياجات الوصول",
+      "viewQuality": "جودة المشاهدة",
+      "priceRange": "نطاق السعر",
+      "section": "القسم"
+    },
+    "viewPreview": "معاينة المشهد",
+    "selectSeat": "اختر هذا المقعد",
+    "accessibility": {
+      "wheelchair": "مكان للكرسي المتحرك",
+      "companion": "مقعد المرافق",
+      "hearingAssisted": "مساعدة سمعية",
+      "visuallyImpaired": "مناسب لضعاف البصر"
+    }
+  },
+  "sustainability": {
+    "title": "الاستدامة",
+    "subtitle": "التزامنا بألعاب خضراء",
+    "yourImpact": "أثرك البيئي",
+    "initiatives": {
+      "title": "المبادرات الخضراء",
+      "renewableEnergy": "الطاقة المتجددة",
+      "wasteReduction": "تقليل النفايات",
+      "waterConservation": "الحفاظ على المياه",
+      "carbonNeutral": "محايدة الكربون"
+    },
+    "tips": {
+      "title": "نصائح بيئية",
+      "bringWaterBottle": "أحضر زجاجة مياه قابلة لإعادة الاستخدام",
+      "usePublicTransport": "استخدم وسائل النقل العام",
+      "recycle": "أعد تدوير نفاياتك"
+    },
+    "score": "درجة الاستدامة"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "empty": "لا توجد إشعارات بعد",
+    "markAllRead": "تحديد الكل كمقروء",
+    "types": {
+      "eventReminder": "تذكير بالفعالية",
+      "scoreUpdate": "تحديث النتيجة",
+      "transportAlert": "تنبيه المواصلات",
+      "ticketUpdate": "تحديث التذكرة",
+      "emergency": "تنبيه طوارئ"
+    },
+    "preferences": {
+      "title": "تفضيلات الإشعارات",
+      "eventReminders": "تذكيرات الفعاليات",
+      "scoreUpdates": "تحديثات النتائج المباشرة",
+      "transportAlerts": "تنبيهات المواصلات",
+      "emergencyAlerts": "تنبيهات الطوارئ (مفعلة دائماً)"
+    }
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "guest": "زائر",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signOut": "تسجيل الخروج",
+    "settings": "الإعدادات",
+    "preferences": {
+      "title": "التفضيلات",
+      "language": "اللغة",
+      "notifications": "الإشعارات",
+      "accessibility": "إمكانية الوصول",
+      "privacy": "الخصوصية"
+    },
+    "mySchedule": "جدولي",
+    "favorites": "المفضلة",
+    "history": "السجل"
+  },
+  "errors": {
+    "notFound": "الصفحة غير موجودة",
+    "notFoundDesc": "الصفحة التي تبحث عنها غير موجودة.",
+    "serverError": "خطأ في الخادم",
+    "serverErrorDesc": "حدث خطأ ما من جانبنا. يرجى المحاولة لاحقاً.",
+    "offline": "أنت غير متصل",
+    "offlineDesc": "يرجى التحقق من اتصالك بالإنترنت.",
+    "goHome": "الذهاب إلى الرئيسية"
+  },
+  "footer": {
+    "about": "عن التطبيق",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "contact": "اتصل بنا",
+    "accessibility": "إمكانية الوصول",
+    "copyright": "© 2030 دورة الألعاب الآسيوية قطر. جميع الحقوق محفوظة."
+  }
+}

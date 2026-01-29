@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "title": "Hayyak Asia 2030 - Qatar Asian Games",
+    "description": "Your guide to the 2030 Asian Games in Qatar. Explore events, venues, tickets, and more."
+  },
+  "common": {
+    "search": "Search",
+    "searchPlaceholder": "Search events, venues, sports...",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "share": "Share",
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear",
+    "apply": "Apply",
+    "reset": "Reset",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "now": "Now",
+    "live": "LIVE",
+    "upcoming": "Upcoming",
+    "past": "Past"
+  },
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "venues": "Venues",
+    "tickets": "Tickets",
+    "transport": "Transport",
+    "culture": "Culture",
+    "profile": "Profile",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "help": "Help",
+    "emergency": "Emergency"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "skipToNavigation": "Skip to navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "languageSelector": "Select language",
+    "currentLanguage": "Current language: {language}",
+    "switchToLanguage": "Switch to {language}",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "highContrast": "High contrast",
+    "reducedMotion": "Reduced motion",
+    "largerText": "Larger text"
+  },
+  "home": {
+    "welcome": "Welcome to the 2030 Asian Games",
+    "location": "Doha, Qatar",
+    "tagline": "Experience Asia's biggest sporting event",
+    "quickAccess": {
+      "events": "Events",
+      "eventsDesc": "Browse all sporting events",
+      "venues": "Venues",
+      "venuesDesc": "Explore stadiums and arenas",
+      "tickets": "Tickets",
+      "ticketsDesc": "Get your event tickets",
+      "transport": "Transport",
+      "transportDesc": "Plan your journey"
+    },
+    "liveTicker": {
+      "title": "Live Now",
+      "noLiveEvents": "No live events at the moment"
+    },
+    "recommendations": {
+      "title": "Recommended for You",
+      "empty": "Start exploring to get personalized recommendations"
+    },
+    "todayHighlights": {
+      "title": "Today's Highlights",
+      "noEvents": "No highlighted events today"
+    },
+    "culturalExplorer": {
+      "title": "Discover Asia",
+      "subtitle": "Explore cultures from across the continent",
+      "explore": "Explore"
+    },
+    "ecoTransport": {
+      "title": "Green Ways to Get Around",
+      "carbonSaved": "Carbon saved today: {amount}",
+      "metro": "Metro",
+      "bus": "Bus",
+      "bike": "Bike",
+      "shuttle": "Shuttle"
+    }
+  },
+  "events": {
+    "title": "Events",
+    "subtitle": "Explore all sporting events",
+    "filters": {
+      "sport": "Sport",
+      "date": "Date",
+      "venue": "Venue",
+      "priceRange": "Price range",
+      "availability": "Availability",
+      "medalEvent": "Medal events only"
+    },
+    "sort": {
+      "date": "Date",
+      "popularity": "Popularity",
+      "price": "Price"
+    },
+    "status": {
+      "scheduled": "Scheduled",
+      "live": "Live",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "postponed": "Postponed"
+    },
+    "types": {
+      "preliminary": "Preliminary",
+      "semifinal": "Semifinal",
+      "final": "Final",
+      "groupStage": "Group Stage",
+      "knockout": "Knockout"
+    },
+    "card": {
+      "from": "From",
+      "seatsLeft": "{count} seats left",
+      "soldOut": "Sold out",
+      "getTickets": "Get tickets",
+      "addToCalendar": "Add to calendar",
+      "setReminder": "Set reminder"
+    },
+    "detail": {
+      "about": "About this event",
+      "schedule": "Schedule",
+      "participants": "Participants",
+      "venue": "Venue",
+      "howToGetThere": "How to get there",
+      "similarEvents": "Similar events"
+    }
+  },
+  "venues": {
+    "title": "Venues",
+    "subtitle": "Explore stadiums and arenas",
+    "filters": {
+      "type": "Venue type",
+      "sport": "Sport",
+      "accessibility": "Accessibility features"
+    },
+    "types": {
+      "stadium": "Stadium",
+      "arena": "Arena",
+      "aquaticCenter": "Aquatic Center",
+      "velodrome": "Velodrome",
+      "sportsComplex": "Sports Complex"
+    },
+    "card": {
+      "capacity": "Capacity: {count}",
+      "events": "{count} events",
+      "viewEvents": "View events",
+      "getDirections": "Get directions"
+    },
+    "detail": {
+      "about": "About this venue",
+      "upcomingEvents": "Upcoming events",
+      "facilities": "Facilities",
+      "accessibility": "Accessibility",
+      "gettingThere": "Getting there",
+      "seating": "Seating guide",
+      "emergencyExits": "Emergency exits"
+    },
+    "accessibility": {
+      "wheelchairAccess": "Wheelchair accessible",
+      "hearingLoop": "Hearing loop",
+      "brailleSignage": "Braille signage",
+      "accessibleParking": "Accessible parking",
+      "assistanceDogs": "Assistance dogs welcome"
+    }
+  },
+  "tickets": {
+    "title": "My Tickets",
+    "subtitle": "Your event tickets",
+    "empty": "You don't have any tickets yet",
+    "browseEvents": "Browse events",
+    "status": {
+      "active": "Active",
+      "used": "Used",
+      "expired": "Expired",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded"
+    },
+    "card": {
+      "viewTicket": "View ticket",
+      "showQR": "Show QR code",
+      "addToWallet": "Add to wallet",
+      "getDirections": "Get directions",
+      "seatInfo": "Section {section}, Row {row}, Seat {seat}"
+    },
+    "purchase": {
+      "selectSeats": "Select seats",
+      "seatSelection": "Seat selection",
+      "checkout": "Checkout",
+      "payment": "Payment",
+      "confirmation": "Confirmation",
+      "total": "Total",
+      "serviceFee": "Service fee",
+      "subtotal": "Subtotal"
+    }
+  },
+  "transport": {
+    "title": "Transport",
+    "subtitle": "Plan your journey",
+    "tabs": {
+      "routes": "Routes",
+      "nearby": "Nearby",
+      "eco": "Eco options"
+    },
+    "types": {
+      "metro": "Metro",
+      "bus": "Bus",
+      "shuttle": "Event shuttle",
+      "bicycle": "Bicycle",
+      "walking": "Walking",
+      "taxi": "Taxi"
+    },
+    "route": {
+      "departure": "Departure",
+      "arrival": "Arrival",
+      "duration": "Duration",
+      "changes": "{count} changes",
+      "direct": "Direct",
+      "frequency": "Every {minutes} min",
+      "nextArrival": "Next in {minutes} min",
+      "carbonSaving": "Save {amount} CO₂"
+    },
+    "eco": {
+      "title": "Eco-friendly options",
+      "description": "Reduce your carbon footprint",
+      "carbonRating": "Carbon rating",
+      "greenChoice": "Green choice"
+    }
+  },
+  "culture": {
+    "title": "Cultural Explorer",
+    "subtitle": "Discover the rich cultures of Asia",
+    "regions": {
+      "eastAsia": "East Asia",
+      "southAsia": "South Asia",
+      "southeastAsia": "Southeast Asia",
+      "westAsia": "West Asia",
+      "centralAsia": "Central Asia"
+    },
+    "country": {
+      "highlights": "Cultural highlights",
+      "traditions": "Traditions",
+      "cuisine": "Cuisine",
+      "arts": "Arts & crafts",
+      "sports": "Traditional sports",
+      "athletes": "Athletes competing"
+    }
+  },
+  "emergency": {
+    "title": "Emergency",
+    "subtitle": "Get help quickly",
+    "button": "Emergency Contact",
+    "contacts": {
+      "police": "Police",
+      "ambulance": "Ambulance",
+      "fire": "Fire department",
+      "embassy": "Embassy",
+      "lostFound": "Lost & found",
+      "medicalCenter": "Medical center",
+      "security": "Event security"
+    },
+    "actions": {
+      "call": "Call",
+      "shareLocation": "Share my location",
+      "reportIncident": "Report incident"
+    },
+    "nearestServices": "Nearest services",
+    "yourLocation": "Your location"
+  },
+  "seatGuide": {
+    "title": "Seat Guide",
+    "subtitle": "Find your perfect seat",
+    "filters": {
+      "accessibility": "Accessibility needs",
+      "viewQuality": "View quality",
+      "priceRange": "Price range",
+      "section": "Section"
+    },
+    "viewPreview": "View preview",
+    "selectSeat": "Select this seat",
+    "accessibility": {
+      "wheelchair": "Wheelchair space",
+      "companion": "Companion seat",
+      "hearingAssisted": "Hearing assisted",
+      "visuallyImpaired": "Visually impaired friendly"
+    }
+  },
+  "sustainability": {
+    "title": "Sustainability",
+    "subtitle": "Our commitment to a green games",
+    "yourImpact": "Your eco impact",
+    "initiatives": {
+      "title": "Green initiatives",
+      "renewableEnergy": "Renewable energy",
+      "wasteReduction": "Waste reduction",
+      "waterConservation": "Water conservation",
+      "carbonNeutral": "Carbon neutral"
+    },
+    "tips": {
+      "title": "Eco tips",
+      "bringWaterBottle": "Bring a reusable water bottle",
+      "usePublicTransport": "Use public transport",
+      "recycle": "Recycle your waste"
+    },
+    "score": "Sustainability score"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications yet",
+    "markAllRead": "Mark all as read",
+    "types": {
+      "eventReminder": "Event reminder",
+      "scoreUpdate": "Score update",
+      "transportAlert": "Transport alert",
+      "ticketUpdate": "Ticket update",
+      "emergency": "Emergency alert"
+    },
+    "preferences": {
+      "title": "Notification preferences",
+      "eventReminders": "Event reminders",
+      "scoreUpdates": "Live score updates",
+      "transportAlerts": "Transport alerts",
+      "emergencyAlerts": "Emergency alerts (always on)"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "guest": "Guest",
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "signOut": "Sign out",
+    "settings": "Settings",
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "notifications": "Notifications",
+      "accessibility": "Accessibility",
+      "privacy": "Privacy"
+    },
+    "mySchedule": "My schedule",
+    "favorites": "Favorites",
+    "history": "History"
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you're looking for doesn't exist.",
+    "serverError": "Server error",
+    "serverErrorDesc": "Something went wrong on our end. Please try again later.",
+    "offline": "You're offline",
+    "offlineDesc": "Please check your internet connection.",
+    "goHome": "Go to homepage"
+  },
+  "footer": {
+    "about": "About",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "contact": "Contact us",
+    "accessibility": "Accessibility",
+    "copyright": "© 2030 Asian Games Qatar. All rights reserved."
+  }
+}

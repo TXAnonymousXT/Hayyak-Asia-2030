@@ -1,0 +1,382 @@
+// Hayyak Asia 2030 Database Schema
+// Using PostgreSQL with PostGIS for geospatial data
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [postgis]
+}
+
+// ============================================
+// USER MANAGEMENT
+// ============================================
+
+model User {
+  id                      String   @id @default(uuid())
+  email                   String   @unique
+  passwordHash            String?  @map("password_hash")
+  phone                   String?
+  preferredLocale         String   @default("en") @map("preferred_locale")
+  preferredLanguages      String[] @default(["en"]) @map("preferred_languages")
+  accessibilityPreferences Json     @default("{}") @map("accessibility_preferences")
+  notificationPreferences  Json     @default("{}") @map("notification_preferences")
+  createdAt               DateTime @default(now()) @map("created_at")
+  updatedAt               DateTime @updatedAt @map("updated_at")
+  lastLoginAt             DateTime? @map("last_login_at")
+
+  profile       UserProfile?
+  tickets       Ticket[]
+  notifications Notification[]
+  interactions  UserInteraction[]
+  emergencyAlerts EmergencyAlert[]
+
+  @@map("users")
+}
+
+model UserProfile {
+  userId               String   @id @map("user_id")
+  displayName          String?  @map("display_name")
+  avatarUrl            String?  @map("avatar_url")
+  nationality          String?  // ISO country code
+  dateOfBirth          DateTime? @map("date_of_birth")
+  interests            String[] @default([])
+  dietaryPreferences   String[] @default([]) @map("dietary_preferences")
+  mobilityRequirements String[] @default([]) @map("mobility_requirements")
+  createdAt            DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+// ============================================
+// LOCALIZATION
+// ============================================
+
+model Language {
+  code        String  @id // 'en', 'ar', 'zh-CN'
+  nameNative  String  @map("name_native")
+  nameEnglish String  @map("name_english")
+  direction   String  @default("ltr") // 'ltr' or 'rtl'
+  isActive    Boolean @default(true) @map("is_active")
+
+  @@map("languages")
+}
+
+model Translation {
+  id              String   @id @default(uuid())
+  entityType      String   @map("entity_type") // 'venue', 'event', 'sport'
+  entityId        String   @map("entity_id")
+  fieldName       String   @map("field_name") // 'name', 'description'
+  languageCode    String   @map("language_code")
+  content         String
+  isAutoTranslated Boolean @default(false) @map("is_auto_translated")
+  reviewedAt      DateTime? @map("reviewed_at")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  @@unique([entityType, entityId, fieldName, languageCode])
+  @@index([entityType, entityId, languageCode])
+  @@map("translations")
+}
+
+// ============================================
+// SPORTS AND EVENTS
+// ============================================
+
+model Sport {
+  id           String  @id @default(uuid())
+  code         String  @unique // 'football', 'swimming'
+  iconUrl      String? @map("icon_url")
+  isParalympic Boolean @default(false) @map("is_paralympic")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  events Event[]
+
+  @@map("sports")
+}
+
+model Event {
+  id             String   @id @default(uuid())
+  sportId        String   @map("sport_id")
+  venueId        String   @map("venue_id")
+  eventType      String   @map("event_type") // 'preliminary', 'semifinal', 'final'
+  startTime      DateTime @map("start_time")
+  endTime        DateTime @map("end_time")
+  status         String   @default("scheduled") // scheduled, live, completed, cancelled
+  isMedalEvent   Boolean  @default(false) @map("is_medal_event")
+  gender         String?  // 'men', 'women', 'mixed'
+  ticketPriceRange Json?  @map("ticket_price_range") // {"min": 50, "max": 500, "currency": "QAR"}
+  capacity       Int?
+  seatsAvailable Int?     @map("seats_available")
+  liveStreamUrl  String?  @map("live_stream_url")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  sport        Sport  @relation(fields: [sportId], references: [id])
+  venue        Venue  @relation(fields: [venueId], references: [id])
+  participants EventParticipant[]
+  tickets      Ticket[]
+
+  @@index([startTime, endTime])
+  @@index([sportId])
+  @@index([venueId])
+  @@index([status])
+  @@map("events")
+}
+
+model EventParticipant {
+  id             String   @id @default(uuid())
+  eventId        String   @map("event_id")
+  countryCode    String?  @map("country_code")
+  athleteName    String?  @map("athlete_name")
+  teamName       String?  @map("team_name")
+  resultPosition Int?     @map("result_position")
+  resultTime     String?  @map("result_time")
+  resultScore    Decimal? @map("result_score")
+  medal          String?  // 'gold', 'silver', 'bronze'
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@map("event_participants")
+}
+
+// ============================================
+// VENUES
+// ============================================
+
+model Venue {
+  id                   String   @id @default(uuid())
+  code                 String   @unique
+  latitude             Float
+  longitude            Float
+  address              Json?    // {"street": "", "city": "", "postal_code": ""}
+  capacity             Int?
+  venueType            String?  @map("venue_type") // 'stadium', 'arena'
+  accessibilityFeatures String[] @default([]) @map("accessibility_features")
+  amenities            String[] @default([])
+  imageUrls            String[] @default([]) @map("image_urls")
+  openingHours         Json?    @map("opening_hours")
+  emergencyExits       Json?    @map("emergency_exits")
+  createdAt            DateTime @default(now()) @map("created_at")
+
+  events   Event[]
+  sections VenueSection[]
+
+  @@map("venues")
+}
+
+model VenueSection {
+  id                String  @id @default(uuid())
+  venueId           String  @map("venue_id")
+  sectionCode       String  @map("section_code")
+  sectionType       String? @map("section_type") // 'vip', 'standard', 'accessible'
+  capacity          Int?
+  priceTier         Int?    @map("price_tier")
+  accessibilityLevel Int?   @map("accessibility_level") // 1-5
+  viewQuality       Int?    @map("view_quality") // 1-5
+  svgPath           String? @map("svg_path")
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  venue Venue @relation(fields: [venueId], references: [id], onDelete: Cascade)
+  seats VenueSeat[]
+
+  @@map("venue_sections")
+}
+
+model VenueSeat {
+  id         String  @id @default(uuid())
+  sectionId  String  @map("section_id")
+  rowNumber  String  @map("row_number")
+  seatNumber String  @map("seat_number")
+  seatType   String  @default("standard") @map("seat_type") // 'standard', 'wheelchair', 'companion'
+  isAvailable Boolean @default(true) @map("is_available")
+
+  section VenueSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  tickets Ticket[]
+
+  @@unique([sectionId, rowNumber, seatNumber])
+  @@map("venue_seats")
+}
+
+// ============================================
+// TICKETING
+// ============================================
+
+model Ticket {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  eventId     String   @map("event_id")
+  seatId      String?  @map("seat_id")
+  ticketType  String   @default("standard") @map("ticket_type") // 'standard', 'vip', 'accessible'
+  price       Decimal
+  currency    String   @default("QAR")
+  status      String   @default("active") // active, used, cancelled, refunded
+  qrCodeData  String?  @map("qr_code_data")
+  purchasedAt DateTime @default(now()) @map("purchased_at")
+  usedAt      DateTime? @map("used_at")
+
+  user  User       @relation(fields: [userId], references: [id])
+  event Event      @relation(fields: [eventId], references: [id])
+  seat  VenueSeat? @relation(fields: [seatId], references: [id])
+
+  @@unique([eventId, seatId])
+  @@index([userId])
+  @@index([eventId])
+  @@map("tickets")
+}
+
+// ============================================
+// CULTURAL CONTENT
+// ============================================
+
+model Country {
+  code             String   @id // ISO 3166-1 alpha-3
+  flagUrl          String?  @map("flag_url")
+  region           String?  // 'East Asia', 'South Asia'
+  capitalCity      String?  @map("capital_city")
+  population       BigInt?
+  languagesSpoken  String[] @default([]) @map("languages_spoken")
+  featuredImageUrl String?  @map("featured_image_url")
+  galleryUrls      String[] @default([]) @map("gallery_urls")
+  videoUrl         String?  @map("video_url")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  highlights CulturalHighlight[]
+
+  @@map("countries")
+}
+
+model CulturalHighlight {
+  id            String   @id @default(uuid())
+  countryCode   String   @map("country_code")
+  highlightType String   @map("highlight_type") // 'tradition', 'cuisine', 'art', 'sport'
+  imageUrl      String?  @map("image_url")
+  videoUrl      String?  @map("video_url")
+  displayOrder  Int      @default(0) @map("display_order")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  country Country @relation(fields: [countryCode], references: [code], onDelete: Cascade)
+
+  @@map("cultural_highlights")
+}
+
+// ============================================
+// TRANSPORTATION
+// ============================================
+
+model TransportRoute {
+  id               String   @id @default(uuid())
+  routeCode        String?  @map("route_code")
+  transportType    String   @map("transport_type") // 'metro', 'bus', 'shuttle', 'bicycle'
+  isEcoFriendly    Boolean  @default(false) @map("is_eco_friendly")
+  carbonRating     Int?     @map("carbon_rating") // 1-5
+  operatingHours   Json?    @map("operating_hours")
+  frequencyMinutes Int?     @map("frequency_minutes")
+  stops            Json?    // Array of stop objects
+  polyline         String?  // Encoded route polyline
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  realtime TransportRealtime[]
+
+  @@map("transport_routes")
+}
+
+model TransportRealtime {
+  id              String   @id @default(uuid())
+  routeId         String   @map("route_id")
+  vehicleId       String?  @map("vehicle_id")
+  latitude        Float
+  longitude       Float
+  nextStopId      String?  @map("next_stop_id")
+  etaMinutes      Int?     @map("eta_minutes")
+  occupancyLevel  Int?     @map("occupancy_level") // 1-5
+  lastUpdated     DateTime @default(now()) @map("last_updated")
+
+  route TransportRoute @relation(fields: [routeId], references: [id], onDelete: Cascade)
+
+  @@map("transport_realtime")
+}
+
+// ============================================
+// NOTIFICATIONS
+// ============================================
+
+model Notification {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  notificationType String   @map("notification_type") // 'event_reminder', 'score_update', 'emergency'
+  priority         String   @default("normal") // 'low', 'normal', 'high', 'urgent'
+  title            String
+  body             String
+  data             Json?    // Additional structured data
+  isRead           Boolean  @default(false) @map("is_read")
+  isPushed         Boolean  @default(false) @map("is_pushed")
+  createdAt        DateTime @default(now()) @map("created_at")
+  readAt           DateTime? @map("read_at")
+  expiresAt        DateTime? @map("expires_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead, createdAt(sort: Desc)])
+  @@map("notifications")
+}
+
+// ============================================
+// RECOMMENDATIONS
+// ============================================
+
+model UserInteraction {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  entityType      String   @map("entity_type") // 'event', 'venue', 'culture'
+  entityId        String   @map("entity_id")
+  interactionType String   @map("interaction_type") // 'view', 'favorite', 'book', 'share'
+  durationSeconds Int?     @map("duration_seconds")
+  context         Json?    // {"source": "homepage", "position": 3}
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([entityType, entityId])
+  @@map("user_interactions")
+}
+
+// ============================================
+// EMERGENCY SYSTEM
+// ============================================
+
+model EmergencyContact {
+  id             String   @id @default(uuid())
+  contactType    String   @map("contact_type") // 'police', 'medical', 'fire', 'embassy'
+  countryCode    String?  @map("country_code") // For embassy contacts
+  phoneNumber    String   @map("phone_number")
+  isPrimary      Boolean  @default(false) @map("is_primary")
+  latitude       Float?
+  longitude      Float?
+  operatingHours Json?    @map("operating_hours")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  @@map("emergency_contacts")
+}
+
+model EmergencyAlert {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  alertType  String   @map("alert_type") // 'medical', 'security', 'lost'
+  latitude   Float
+  longitude  Float
+  status     String   @default("active") // active, resolved
+  resolvedAt DateTime? @map("resolved_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("emergency_alerts")
+}
