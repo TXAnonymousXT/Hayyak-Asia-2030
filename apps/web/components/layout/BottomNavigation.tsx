@@ -23,11 +23,11 @@ export function BottomNavigation() {
 
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 md:hidden safe-area-bottom"
+      className="fixed bottom-0 inset-x-0 z-40 bg-gray-900/98 backdrop-blur-lg border-t border-gray-800 md:hidden safe-area-bottom"
       aria-label="Bottom navigation"
     >
       {/* Subtle gradient accent at top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-qatar-maroon/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-qatar-gold/40 to-transparent" />
 
       <div className="flex items-center justify-around h-16 px-2">
         {navItems.slice(0, 2).map((item) => (
@@ -82,16 +82,16 @@ function NavItem({
       className={clsx(
         'flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-touch px-2 py-1 rounded-xl',
         'transition-all duration-300',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-qatar-maroon',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-qatar-gold',
         isActive
-          ? 'text-qatar-maroon dark:text-qatar-gold'
-          : 'text-gray-400 dark:text-gray-500 hover:text-qatar-maroon dark:hover:text-qatar-gold'
+          ? 'text-qatar-gold'
+          : 'text-gray-500 hover:text-qatar-gold'
       )}
       aria-current={isActive ? 'page' : undefined}
     >
       <div className={clsx(
         'relative',
-        isActive && 'after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:bg-qatar-maroon dark:after:bg-qatar-gold'
+        isActive && 'after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:bg-qatar-gold'
       )}>
         <Icon className={clsx(
           'w-6 h-6 transition-transform duration-300',

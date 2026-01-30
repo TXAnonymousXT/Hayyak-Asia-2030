@@ -84,7 +84,7 @@ export function Footer() {
 
         {/* Sustainability badge */}
         <div className="flex items-center justify-center gap-2 py-4 border-t border-b border-gray-200 dark:border-gray-700 mb-4">
-          <span className="inline-flex items-center gap-2 text-sm text-green-600 dark:text-green-400">
+          <span className="inline-flex items-center gap-2 text-sm text-qatar-gold dark:text-qatar-gold">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"

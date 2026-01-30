@@ -206,54 +206,54 @@ function HomePageContent() {
               icon={<CultureIcon />}
               title={t('culturalExplorer.title')}
               description={t('culturalExplorer.subtitle')}
-              gradient="from-purple-500 to-indigo-600"
+              gradient="from-qatar-maroon-dark to-qatar-maroon"
             />
             <QuickAccessCard
               href="/emergency"
               icon={<EmergencyIcon />}
               title={tNav('emergency')}
               description="Get help quickly"
-              gradient="from-red-500 to-rose-600"
+              gradient="from-red-700 to-red-900"
             />
             <QuickAccessCard
               href="/transport"
               icon={<TransportIcon />}
               title={t('ecoTransport.title')}
               description="Green transport options"
-              gradient="from-emerald-500 to-teal-600"
+              gradient="from-gray-700 to-gray-900"
             />
             <QuickAccessCard
               href="/venues"
               icon={<SeatIcon />}
               title="Seat Guide"
               description="Find your perfect seat"
-              gradient="from-blue-500 to-cyan-600"
+              gradient="from-slate-700 to-slate-900"
             />
             <QuickAccessCard
               href="/sustainability"
               icon={<SustainabilityIcon />}
               title="Sustainability"
               description="Eco initiatives"
-              gradient="from-green-500 to-emerald-600"
+              gradient="from-gray-800 to-gray-950"
             />
             <QuickAccessCard
               href="/tickets"
               icon={<ScheduleIcon />}
               title="My Schedule"
               description="Your events"
-              gradient="from-qatar-maroon to-qatar-maroon-light"
+              gradient="from-qatar-maroon to-qatar-maroon-dark"
             />
           </div>
         </div>
       </section>
 
-      {/* Cultural Explorer Preview - Stunning gradient */}
+      {/* Cultural Explorer Preview - Qatar-themed dark gradient */}
       <section className="py-16 relative overflow-hidden">
-        {/* Background with mesh gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 end-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 start-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+        {/* Background with dark Qatar gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-qatar-maroon-dark to-gray-900" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 end-0 w-96 h-96 bg-qatar-gold/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 start-0 w-96 h-96 bg-qatar-maroon/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 relative">
@@ -265,7 +265,7 @@ function HomePageContent() {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
+              className="border-2 border-qatar-gold/70 text-qatar-gold hover:bg-qatar-gold hover:text-gray-900 transition-all duration-300"
             >
               {t('culturalExplorer.explore')}
             </Button>
@@ -304,10 +304,10 @@ function HomePageContent() {
       {/* Eco Transport Widget - Enhanced */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 p-8 md:p-12">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950 p-8 md:p-12">
             {/* Decorative elements */}
-            <div className="absolute top-0 end-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 start-0 w-48 h-48 bg-teal-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 end-0 w-64 h-64 bg-qatar-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 start-0 w-48 h-48 bg-qatar-maroon/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
 
             <div className="relative">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
@@ -320,11 +320,11 @@ function HomePageContent() {
                   </div>
                   <p className="text-white/80">Choose green, travel clean</p>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-sm rounded-xl">
+                <div className="flex items-center gap-3 px-5 py-3 bg-qatar-gold/10 border border-qatar-gold/20 backdrop-blur-sm rounded-xl">
                   <span className="text-2xl">🌳</span>
                   <div>
-                    <p className="text-white/70 text-sm">Carbon saved today</p>
-                    <p className="text-white font-bold text-xl">2.5 kg CO₂</p>
+                    <p className="text-gray-400 text-sm">Carbon saved today</p>
+                    <p className="text-qatar-gold font-bold text-xl">2.5 kg CO₂</p>
                   </div>
                 </div>
               </div>
@@ -408,9 +408,9 @@ function QuickAccessButton({
 function EventCard({ index }: { index: number }) {
   const events = [
     { sport: '⚽', name: 'Football Finals', venue: 'Lusail Stadium', price: '150', badge: 'Final', badgeColor: 'bg-qatar-gold text-qatar-maroon-dark' },
-    { sport: '🏊', name: 'Swimming 100m', venue: 'Aquatics Centre', price: '80', badge: 'Medal Event', badgeColor: 'bg-amber-500 text-white' },
-    { sport: '🏸', name: 'Badminton Mixed', venue: 'Indoor Arena', price: '50', badge: 'Semi-Final', badgeColor: 'bg-blue-500 text-white' },
-    { sport: '🏃', name: 'Marathon', venue: 'Doha Corniche', price: '30', badge: 'Popular', badgeColor: 'bg-green-500 text-white' },
+    { sport: '🏊', name: 'Swimming 100m', venue: 'Aquatics Centre', price: '80', badge: 'Medal Event', badgeColor: 'bg-amber-600 text-white' },
+    { sport: '🏸', name: 'Badminton Mixed', venue: 'Indoor Arena', price: '50', badge: 'Semi-Final', badgeColor: 'bg-slate-600 text-white' },
+    { sport: '🏃', name: 'Marathon', venue: 'Doha Corniche', price: '30', badge: 'Popular', badgeColor: 'bg-gray-700 text-white' },
   ];
 
   const event = events[index - 1];
