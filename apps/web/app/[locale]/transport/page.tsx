@@ -37,10 +37,10 @@ function TransportPageContent() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white py-12">
+      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">{t('title')}</h1>
-          <p className="text-white/80">{t('subtitle')}</p>
+          <p className="text-gray-400">{t('subtitle')}</p>
         </div>
       </div>
 
@@ -52,11 +52,11 @@ function TransportPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <Input
                 placeholder="From: Your location"
-                leftElement={<span className="text-green-500">📍</span>}
+                leftElement={<span className="text-qatar-maroon">📍</span>}
               />
               <Input
                 placeholder="To: Select venue"
-                leftElement={<span className="text-red-500">📍</span>}
+                leftElement={<span className="text-qatar-gold">📍</span>}
               />
             </div>
             <Button variant="primary" fullWidth>
@@ -99,7 +99,7 @@ function TransportPageContent() {
                     <div className="text-right">
                       <div className="flex items-center gap-1 mb-1">
                         {[...Array(5)].map((_, i) => (
-                          <span key={i} className={i < option.carbonRating ? 'text-green-500' : 'text-gray-300'}>
+                          <span key={i} className={i < option.carbonRating ? 'text-qatar-gold' : 'text-gray-300'}>
                             🌿
                           </span>
                         ))}
@@ -135,7 +135,7 @@ function TransportPageContent() {
             </Card>
 
             {/* Eco Impact */}
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
+            <Card className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800/50 dark:to-gray-700/50 border-gray-300 dark:border-gray-600">
               <CardHeader
                 title={
                   <span className="flex items-center gap-2">
@@ -148,7 +148,7 @@ function TransportPageContent() {
                   {t('eco.description')}
                 </p>
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
-                  <p className="text-3xl font-bold text-green-600 mb-1">2.5 kg</p>
+                  <p className="text-3xl font-bold text-qatar-gold mb-1">2.5 kg</p>
                   <p className="text-sm text-gray-500">CO₂ saved this week</p>
                 </div>
               </CardBody>
