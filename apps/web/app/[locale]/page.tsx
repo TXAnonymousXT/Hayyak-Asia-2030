@@ -156,7 +156,7 @@ function HomePageContent() {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 {t('recommendations.title')}
               </h2>
-              <p className="text-gray-500 dark:text-gray-400">Personalized picks just for you</p>
+              <p className="text-gray-500 dark:text-gray-400">{t('recommendations.empty')}</p>
             </div>
             <Link
               href="/events"
@@ -194,10 +194,10 @@ function HomePageContent() {
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center">
-            Explore the Games
+            {t('exploreGames')}
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-center mb-10">
-            Everything you need at your fingertips
+            {t('everythingYouNeed')}
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -262,13 +262,15 @@ function HomePageContent() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{t('culturalExplorer.title')}</h2>
               <p className="text-white/70 text-lg">{t('culturalExplorer.subtitle')}</p>
             </div>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-qatar-gold/70 text-qatar-gold hover:bg-qatar-gold hover:text-gray-900 transition-all duration-300"
-            >
-              {t('culturalExplorer.explore')}
-            </Button>
+            <Link href="/culture">
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-qatar-gold text-gray-900 hover:bg-qatar-gold-light font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                {t('culturalExplorer.explore')}
+              </Button>
+            </Link>
           </div>
 
           {/* Country flags carousel with glass cards */}

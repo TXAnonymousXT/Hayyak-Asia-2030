@@ -93,7 +93,7 @@
     },
     "recommendations": {
       "title": "Recommended for You",
-      "empty": "Start exploring to get personalized recommendations"
+      "empty": "Personalized picks just for you"
     },
     "todayHighlights": {
       "title": "Today's Highlights",
@@ -534,11 +534,15 @@
     "goHome": "Go to homepage"
   },
   "footer": {
-    "about": "About",
+    "about": "Your guide to the 2030 Asian Games in Qatar.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "legal": "Legal",
     "privacy": "Privacy policy",
     "terms": "Terms of service",
     "contact": "Contact us",
     "accessibility": "Accessibility",
+    "cookies": "Cookies",
     "copyright": "© 2030 Asian Games Qatar. All rights reserved."
   }
 }

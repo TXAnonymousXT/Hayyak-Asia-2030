@@ -49,10 +49,10 @@ export default function CountryDetailPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-900 via-qatar-maroon-dark to-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-qatar-gold/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-qatar-maroon/30 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 py-12 relative">
@@ -120,7 +120,7 @@ export default function CountryDetailPage() {
                   {country.highlights.map((highlight, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 text-purple-700 dark:text-purple-300 rounded-xl font-medium"
+                      className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-200 rounded-xl font-medium"
                     >
                       {highlight}
                     </span>
@@ -228,7 +228,7 @@ export default function CountryDetailPage() {
               </Card>
 
               {/* Fun Facts */}
-              <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border-purple-200 dark:border-purple-800">
+              <Card className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800/50 dark:to-gray-700/50 border-gray-300 dark:border-gray-600">
                 <CardBody>
                   <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
                     💡 {t('country.funFacts')}
@@ -236,7 +236,7 @@ export default function CountryDetailPage() {
                   <ul className="space-y-3">
                     {country.facts.map((fact, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                        <span className="text-purple-500 mt-1">•</span>
+                        <span className="text-qatar-maroon dark:text-qatar-gold mt-1">•</span>
                         {fact}
                       </li>
                     ))}
@@ -276,7 +276,7 @@ export default function CountryDetailPage() {
               .map((otherCountry) => (
                 <Link key={otherCountry.id} href={`/culture/${otherCountry.id}`}>
                   <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                    <div className="aspect-video bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 flex items-center justify-center">
+                    <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center">
                       <span className="text-5xl">{otherCountry.flag}</span>
                     </div>
                     <CardBody>

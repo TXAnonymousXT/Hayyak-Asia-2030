@@ -33,10 +33,10 @@ export default function CulturePage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Header */}
-      <div className="relative bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 text-white py-16 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-900 via-qatar-maroon-dark to-gray-900 text-white py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-qatar-gold/40 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-qatar-maroon/30 rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 relative">
           <div className="flex items-center gap-3 mb-4">
@@ -72,8 +72,8 @@ export default function CulturePage() {
               onClick={() => setSelectedRegion(region.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${
                 selectedRegion === region.id
-                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-purple-400'
+                  ? 'bg-gradient-to-r from-qatar-maroon to-qatar-maroon-dark text-white shadow-lg'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-qatar-maroon dark:hover:border-qatar-gold'
               }`}
             >
               <span>{region.emoji}</span>
@@ -119,7 +119,7 @@ export default function CulturePage() {
             🌟 {t('didYouKnow')}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border-purple-200 dark:border-purple-800">
+            <Card className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800/50 dark:to-gray-700/50 border-gray-300 dark:border-gray-600">
               <CardBody>
                 <div className="text-center">
                   <span className="text-4xl mb-3 block">🏆</span>
@@ -130,7 +130,7 @@ export default function CulturePage() {
                 </div>
               </CardBody>
             </Card>
-            <Card className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-800">
+            <Card className="bg-gradient-to-br from-qatar-maroon/10 to-qatar-maroon/20 dark:from-qatar-maroon/20 dark:to-qatar-maroon/30 border-qatar-maroon/30 dark:border-qatar-maroon/40">
               <CardBody>
                 <div className="text-center">
                   <span className="text-4xl mb-3 block">🗣️</span>
@@ -141,7 +141,7 @@ export default function CulturePage() {
                 </div>
               </CardBody>
             </Card>
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
+            <Card className="bg-gradient-to-br from-qatar-gold/10 to-qatar-gold/20 dark:from-qatar-gold/10 dark:to-qatar-gold/20 border-qatar-gold/30 dark:border-qatar-gold/40">
               <CardBody>
                 <div className="text-center">
                   <span className="text-4xl mb-3 block">🍜</span>
@@ -164,7 +164,7 @@ function CountryCard({ country, t }: { country: Country; t: any }) {
     <Link href={`/culture/${country.id}`}>
       <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
         {/* Flag Area */}
-        <div className="relative aspect-square bg-gradient-to-br from-purple-100 via-indigo-100 to-purple-200 dark:from-purple-900/50 dark:via-indigo-900/50 dark:to-purple-800/50 flex items-center justify-center overflow-hidden">
+        <div className="relative aspect-square bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 flex items-center justify-center overflow-hidden">
           <span className="text-8xl group-hover:scale-110 transition-transform duration-300">
             {country.flag}
           </span>
@@ -176,7 +176,7 @@ function CountryCard({ country, t }: { country: Country; t: any }) {
 
         {/* Content */}
         <CardBody>
-          <h3 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors mb-1">
+          <h3 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-qatar-maroon dark:group-hover:text-qatar-gold transition-colors mb-1">
             {country.name}
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
@@ -188,7 +188,7 @@ function CountryCard({ country, t }: { country: Country; t: any }) {
             {country.highlights.slice(0, 3).map((highlight, i) => (
               <span
                 key={i}
-                className="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full"
+                className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
               >
                 {highlight}
               </span>
@@ -200,7 +200,7 @@ function CountryCard({ country, t }: { country: Country; t: any }) {
             <span className="text-sm text-gray-500 dark:text-gray-400">
               🏅 {country.athletes.length} {t('country.athletes').toLowerCase()}
             </span>
-            <span className="text-purple-600 dark:text-purple-400 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            <span className="text-qatar-maroon dark:text-qatar-gold font-medium text-sm group-hover:translate-x-1 transition-transform">
               {t('country.highlights')} →
             </span>
           </div>
