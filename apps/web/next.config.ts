@@ -1,21 +1,21 @@
-import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./lib/i18n/request.ts');
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Image optimization for performance
   images: {
-    formats: ['image/avif', 'image/webp'] as const,
+    formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
-        protocol: 'https' as const,
+        protocol: 'https',
         hostname: 'cdn.hayyak2030.qa',
       },
       {
-        protocol: 'https' as const,
+        protocol: 'https',
         hostname: 'images.hayyak2030.qa',
       },
     ],
@@ -24,11 +24,11 @@ const nextConfig: NextConfig = {
 
   // Experimental features
   experimental: {
-    optimizePackageImports: ['@hayyak/ui'],
+    optimizePackageImports: [],
   },
 
   // Transpile packages from monorepo
-  transpilePackages: ['@hayyak/ui', '@hayyak/types'],
+  transpilePackages: [],
 };
 
 export default withNextIntl(nextConfig);
