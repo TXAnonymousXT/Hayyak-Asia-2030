@@ -33,10 +33,10 @@ export default function CulturePage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Header */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-qatar-maroon-dark to-gray-900 text-white py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-qatar-gold/40 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-qatar-maroon/30 rounded-full blur-3xl" />
+      <div className="relative bg-gradient-to-br from-qatar-maroon-dark via-qatar-maroon to-qatar-maroon-dark text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-qatar-gold/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-qatar-maroon-light/40 rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 relative">
           <div className="flex items-center gap-3 mb-4">
@@ -164,7 +164,7 @@ function CountryCard({ country, t }: { country: Country; t: any }) {
     <Link href={`/culture/${country.id}`}>
       <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
         {/* Flag Area */}
-        <div className="relative aspect-square bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 flex items-center justify-center overflow-hidden">
+        <div className="relative aspect-square bg-gradient-to-br from-qatar-maroon/80 via-qatar-maroon-dark to-qatar-maroon-dark flex items-center justify-center overflow-hidden">
           <span className="text-8xl group-hover:scale-110 transition-transform duration-300">
             {country.flag}
           </span>
