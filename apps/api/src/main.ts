@@ -13,16 +13,11 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 async function buildServer() {
   const fastify = Fastify({
-    logger: {
-      level: process.env.LOG_LEVEL || 'info',
-      transport: {
-        target: 'pino-pretty',
-        options: {
-          translateTime: 'HH:MM:ss Z',
-          ignore: 'pid,hostname',
+    logger: process.env.NODE_ENV === 'production'
+      ? true
+      : {
+          level: process.env.LOG_LEVEL || 'info',
         },
-      },
-    },
   });
 
   // Security middleware

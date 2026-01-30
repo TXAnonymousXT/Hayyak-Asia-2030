@@ -33,7 +33,14 @@
     "now": "الآن",
     "live": "مباشر",
     "upcoming": "قادم",
-    "past": "منتهي"
+    "past": "منتهي",
+    "from": "من",
+    "to": "إلى",
+    "price": "السعر",
+    "free": "مجاني",
+    "available": "متاح",
+    "soldOut": "نفدت التذاكر",
+    "comingSoon": "قريباً"
   },
   "navigation": {
     "home": "الرئيسية",
@@ -46,7 +53,9 @@
     "settings": "الإعدادات",
     "notifications": "الإشعارات",
     "help": "المساعدة",
-    "emergency": "الطوارئ"
+    "emergency": "الطوارئ",
+    "cart": "السلة",
+    "sustainability": "الاستدامة"
   },
   "accessibility": {
     "skipToContent": "الانتقال إلى المحتوى الرئيسي",
@@ -66,6 +75,8 @@
     "welcome": "مرحباً بكم في دورة الألعاب الآسيوية 2030",
     "location": "الدوحة، قطر",
     "tagline": "عش أكبر حدث رياضي في آسيا",
+    "comingSoon": "قريباً",
+    "theAsianGames": "دورة الألعاب الآسيوية 2030",
     "quickAccess": {
       "events": "الفعاليات",
       "eventsDesc": "تصفح جميع الفعاليات الرياضية",
@@ -100,11 +111,26 @@
       "bus": "الحافلة",
       "bike": "الدراجة",
       "shuttle": "الحافلة المكوكية"
-    }
+    },
+    "stats": {
+      "sports": "الرياضات",
+      "venues": "الأماكن",
+      "countries": "الدول",
+      "athletes": "الرياضيين"
+    },
+    "exploreGames": "استكشف الألعاب",
+    "everythingYouNeed": "كل ما تحتاجه في متناول يدك"
   },
   "events": {
     "title": "الفعاليات",
     "subtitle": "استكشف جميع الفعاليات الرياضية",
+    "filterBySport": "تصفية حسب الرياضة",
+    "filterByCategory": "تصفية حسب الفئة",
+    "allSports": "جميع الرياضات",
+    "allCategories": "جميع الفئات",
+    "showingEvents": "عرض {count} فعالية",
+    "noEventsFound": "لم يتم العثور على فعاليات",
+    "clearFilters": "مسح الفلاتر",
     "filters": {
       "sport": "الرياضة",
       "date": "التاريخ",
@@ -130,7 +156,9 @@
       "semifinal": "نصف النهائي",
       "final": "النهائي",
       "groupStage": "دور المجموعات",
-      "knockout": "خروج المغلوب"
+      "group": "دور المجموعات",
+      "knockout": "خروج المغلوب",
+      "quarterfinal": "ربع النهائي"
     },
     "card": {
       "from": "من",
@@ -138,20 +166,38 @@
       "soldOut": "نفدت التذاكر",
       "getTickets": "احصل على التذاكر",
       "addToCalendar": "أضف إلى التقويم",
-      "setReminder": "ضع تذكيراً"
+      "setReminder": "ضع تذكيراً",
+      "viewDetails": "عرض التفاصيل"
     },
     "detail": {
       "about": "عن هذه الفعالية",
       "schedule": "الجدول",
       "participants": "المشاركون",
+      "participatingAthletes": "الرياضيون المشاركون",
       "venue": "المكان",
+      "venueInfo": "معلومات المكان",
       "howToGetThere": "كيفية الوصول",
-      "similarEvents": "فعاليات مشابهة"
+      "similarEvents": "فعاليات مشابهة",
+      "selectTickets": "اختيار التذاكر",
+      "chooseSection": "اختر القسم",
+      "quantity": "الكمية",
+      "addToCart": "أضف إلى السلة",
+      "viewCart": "عرض السلة",
+      "total": "المجموع",
+      "serviceFee": "رسوم الخدمة",
+      "seatsAvailable": "مقاعد متاحة"
     }
   },
   "venues": {
     "title": "الأماكن",
     "subtitle": "استكشف الملاعب والصالات",
+    "worldClassVenues": "أماكن عالمية المستوى",
+    "totalCapacity": "السعة الإجمالية",
+    "sportsHosted": "الرياضات المستضافة",
+    "accessible": "مُهيأ للوصول",
+    "upcomingEvents": "فعاليات قادمة",
+    "viewDetails": "عرض التفاصيل",
+    "venuesMap": "خريطة الأماكن",
     "filters": {
       "type": "نوع المكان",
       "sport": "الرياضة",
@@ -173,11 +219,15 @@
     "detail": {
       "about": "عن هذا المكان",
       "upcomingEvents": "الفعاليات القادمة",
+      "sportsAtVenue": "الرياضات في هذا المكان",
       "facilities": "المرافق",
       "accessibility": "إمكانية الوصول",
       "gettingThere": "كيفية الوصول",
+      "location": "الموقع",
       "seating": "دليل المقاعد",
-      "emergencyExits": "مخارج الطوارئ"
+      "emergencyExits": "مخارج الطوارئ",
+      "planYourJourney": "خطط لرحلتك",
+      "exploreOtherVenues": "استكشف أماكن أخرى"
     },
     "accessibility": {
       "wheelchairAccess": "وصول الكراسي المتحركة",
@@ -185,6 +235,14 @@
       "brailleSignage": "لافتات بريل",
       "accessibleParking": "مواقف سيارات مخصصة",
       "assistanceDogs": "الكلاب المساعدة مرحب بها"
+    },
+    "transport": {
+      "metro": "المترو",
+      "bus": "الحافلة",
+      "parking": "موقف السيارات",
+      "nearestStation": "أقرب محطة",
+      "eventShuttles": "حافلات الفعاليات متوفرة",
+      "spacesAvailable": "مواقف متاحة"
     }
   },
   "tickets": {
@@ -192,6 +250,10 @@
     "subtitle": "تذاكر فعالياتك",
     "empty": "ليس لديك أي تذاكر بعد",
     "browseEvents": "تصفح الفعاليات",
+    "allTickets": "جميع التذاكر",
+    "active": "نشط",
+    "used": "مستخدم",
+    "expired": "منتهي الصلاحية",
     "status": {
       "active": "نشط",
       "used": "مستخدم",
@@ -203,8 +265,26 @@
       "viewTicket": "عرض التذكرة",
       "showQR": "عرض رمز QR",
       "addToWallet": "أضف إلى المحفظة",
-      "getDirections": "احصل على الاتجاهات",
+      "getDirections": "الاتجاهات",
+      "viewEvent": "عرض الفعالية",
       "seatInfo": "القسم {section}، الصف {row}، المقعد {seat}"
+    },
+    "qrCode": {
+      "title": "رمز QR الخاص بتذكرتك",
+      "showAtEntrance": "أظهر هذا الرمز عند مدخل المكان"
+    },
+    "directions": {
+      "title": "الاتجاهات إلى",
+      "drive": "بالسيارة",
+      "transit": "بالمواصلات",
+      "walk": "سيراً",
+      "openInMaps": "افتح في الخرائط"
+    },
+    "wallet": {
+      "title": "أضف التذاكر إلى محفظتك",
+      "description": "الوصول السريع لتذاكرك عبر Apple Wallet أو Google Wallet",
+      "appleWallet": "Apple Wallet",
+      "googleWallet": "Google Wallet"
     },
     "purchase": {
       "selectSeats": "اختر المقاعد",
@@ -216,6 +296,23 @@
       "serviceFee": "رسوم الخدمة",
       "subtotal": "المجموع الفرعي"
     }
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "emptyDescription": "يبدو أنك لم تضف أي تذاكر بعد. تصفح الفعاليات للعثور على شيء مثير!",
+    "itemsInCart": "{count} عنصر في سلتك",
+    "clearCart": "إفراغ السلة",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "serviceFee": "رسوم الخدمة",
+    "total": "المجموع",
+    "proceedToCheckout": "المتابعة للدفع",
+    "promoCode": "هل لديك رمز ترويجي؟",
+    "enterCode": "أدخل الرمز",
+    "apply": "تطبيق",
+    "securePayment": "معلومات الدفع الخاصة بك آمنة ومشفرة",
+    "termsAgreement": "بالمتابعة، أنت توافق على شروط الخدمة وسياسة الاسترداد"
   },
   "transport": {
     "title": "المواصلات",
@@ -241,19 +338,25 @@
       "direct": "مباشر",
       "frequency": "كل {minutes} دقيقة",
       "nextArrival": "القادم خلال {minutes} دقيقة",
-      "carbonSaving": "وفر {amount} من الكربون"
+      "carbonSaving": "وفر {amount} من الكربون",
+      "away": "بعيد"
     },
     "eco": {
       "title": "الخيارات الصديقة للبيئة",
-      "description": "قلل من بصمتك الكربونية",
+      "description": "اختر الأخضر، سافر نظيفاً",
       "carbonRating": "تصنيف الكربون",
-      "greenChoice": "الخيار الأخضر"
+      "greenChoice": "الخيار الأخضر",
+      "carbonSavedToday": "الكربون الموفر اليوم"
     }
   },
   "culture": {
     "title": "مستكشف الثقافات",
     "subtitle": "اكتشف ثقافات آسيا الغنية",
+    "searchPlaceholder": "ابحث عن الدول والتقاليد والمأكولات...",
+    "exploring": "استكشاف {count} دول",
+    "noCountriesFound": "لم يتم العثور على دول",
     "regions": {
+      "all": "جميع المناطق",
       "eastAsia": "شرق آسيا",
       "southAsia": "جنوب آسيا",
       "southeastAsia": "جنوب شرق آسيا",
@@ -265,14 +368,24 @@
       "traditions": "التقاليد",
       "cuisine": "المطبخ",
       "arts": "الفنون والحرف",
-      "sports": "الرياضات التقليدية",
-      "athletes": "الرياضيون المشاركون"
-    }
+      "sports": "الرياضات الشعبية",
+      "athletes": "الرياضيون المشاركون",
+      "funFacts": "حقائق ممتعة",
+      "watchCompete": "شاهد {country} تتنافس!",
+      "getTickets": "احصل على تذاكر لمشاهدة رياضيي {country} في دورة الألعاب الآسيوية 2030."
+    },
+    "didYouKnow": "هل تعلم؟",
+    "countriesCompeting": "سيتنافس رياضيون من 46 دولة آسيوية في ألعاب 2030",
+    "languages": "تضم آسيا أكثر من 2,300 لغة عبر مناطقها المتنوعة",
+    "culinaryParadise": "استمتع بمأكولات من جميع أنحاء آسيا في الألعاب",
+    "exploreMore": "استكشف المزيد من الدول"
   },
   "emergency": {
     "title": "الطوارئ",
     "subtitle": "احصل على المساعدة بسرعة",
     "button": "اتصال الطوارئ",
+    "callNow": "اتصل الآن",
+    "available24": "متاح على مدار الساعة",
     "contacts": {
       "police": "الشرطة",
       "ambulance": "الإسعاف",
@@ -312,38 +425,78 @@
     "title": "الاستدامة",
     "subtitle": "التزامنا بألعاب خضراء",
     "yourImpact": "أثرك البيئي",
+    "greenImpact": "أثرك الأخضر",
+    "trackImpact": "تتبع اختياراتك المستدامة خلال الألعاب وشاهد أثرك الإيجابي.",
+    "viewFullReport": "عرض التقرير الكامل",
+    "co2Saved": "ثاني أكسيد الكربون الموفر",
+    "waterSaved": "المياه الموفرة",
+    "greenActions": "الإجراءات الخضراء",
     "initiatives": {
-      "title": "المبادرات الخضراء",
+      "title": "مبادرات الاستدامة",
       "renewableEnergy": "الطاقة المتجددة",
       "wasteReduction": "تقليل النفايات",
       "waterConservation": "الحفاظ على المياه",
       "carbonNeutral": "محايدة الكربون"
     },
+    "howYouCanHelp": "كيف يمكنك المساعدة",
     "tips": {
       "title": "نصائح بيئية",
       "bringWaterBottle": "أحضر زجاجة مياه قابلة لإعادة الاستخدام",
       "usePublicTransport": "استخدم وسائل النقل العام",
-      "recycle": "أعد تدوير نفاياتك"
+      "recycle": "أعد تدوير نفاياتك",
+      "walkOrBike": "امشِ أو استخدم الدراجة",
+      "walkOrBikeDesc": "استخدم ممرات المشاة المخصصة ومحطات مشاركة الدراجات بين الأماكن القريبة.",
+      "bringYourBottle": "أحضر زجاجتك",
+      "bringYourBottleDesc": "محطات إعادة تعبئة المياه المجانية متوفرة في جميع الأماكن. تجنب البلاستيك ذو الاستخدام الواحد.",
+      "sortWaste": "افرز نفاياتك",
+      "sortWasteDesc": "ابحث عن الحاويات الملونة: الأزرق لإعادة التدوير، الأخضر للسماد، الأسود للعام.",
+      "goDigital": "انتقل للرقمي",
+      "goDigitalDesc": "استخدم التذاكر والبرامج الرقمية. وفر الورق وتجنب الطوابير.",
+      "beatHeat": "تغلب على الحرارة بذكاء",
+      "beatHeatDesc": "قم بزيارة المناطق المبردة بدلاً من استخدام المراوح الشخصية. الأماكن مزودة بأنظمة تبريد فعالة.",
+      "chooseLocal": "اختر المحلي",
+      "chooseLocalDesc": "ادعم البائعين المحليين الذين يستخدمون مكونات من مصادر مستدامة."
+    },
+    "pledge": {
+      "title": "خذ التعهد الأخضر",
+      "description": "التزم بالممارسات المستدامة خلال الألعاب واكسب شارات ومكافآت بيئية حصرية.",
+      "takePledge": "خذ التعهد",
+      "pledgeCount": "أكثر من 50,000 زائر تعهدوا بالفعل!"
+    },
+    "sdg": {
+      "title": "متوافق مع أهداف الأمم المتحدة للتنمية المستدامة"
     },
     "score": "درجة الاستدامة"
   },
   "notifications": {
     "title": "الإشعارات",
     "empty": "لا توجد إشعارات بعد",
+    "allCaughtUp": "أنت على اطلاع!",
+    "unreadCount": "{count} إشعار(ات) غير مقروءة",
     "markAllRead": "تحديد الكل كمقروء",
+    "markAsRead": "تحديد كمقروء",
+    "delete": "حذف",
+    "viewDetails": "عرض التفاصيل",
+    "noNotifications": "لا توجد إشعارات",
+    "checkBackLater": "أنت على اطلاع! تحقق لاحقاً للتحديثات.",
     "types": {
       "eventReminder": "تذكير بالفعالية",
       "scoreUpdate": "تحديث النتيجة",
       "transportAlert": "تنبيه المواصلات",
       "ticketUpdate": "تحديث التذكرة",
-      "emergency": "تنبيه طوارئ"
+      "emergency": "تنبيه طوارئ",
+      "event": "فعالية",
+      "ticket": "تذكرة",
+      "transport": "مواصلات",
+      "general": "عام"
     },
     "preferences": {
       "title": "تفضيلات الإشعارات",
-      "eventReminders": "تذكيرات الفعاليات",
+      "eventReminders": "تحديثات وتذكيرات الفعاليات",
       "scoreUpdates": "تحديثات النتائج المباشرة",
       "transportAlerts": "تنبيهات المواصلات",
-      "emergencyAlerts": "تنبيهات الطوارئ (مفعلة دائماً)"
+      "emergencyAlerts": "إشعارات الطوارئ",
+      "promotional": "العروض الترويجية"
     }
   },
   "profile": {
@@ -353,6 +506,7 @@
     "signUp": "إنشاء حساب",
     "signOut": "تسجيل الخروج",
     "settings": "الإعدادات",
+    "editProfile": "تعديل الملف الشخصي",
     "preferences": {
       "title": "التفضيلات",
       "language": "اللغة",
@@ -362,7 +516,13 @@
     },
     "mySchedule": "جدولي",
     "favorites": "المفضلة",
-    "history": "السجل"
+    "history": "السجل",
+    "quickActions": "الإجراءات السريعة",
+    "myTickets": "تذاكري",
+    "savedEvents": "الفعاليات المحفوظة",
+    "travelPlans": "خطط السفر",
+    "accountSettings": "إعدادات الحساب",
+    "helpSupport": "المساعدة والدعم"
   },
   "errors": {
     "notFound": "الصفحة غير موجودة",

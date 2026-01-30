@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Input } from '@/components/ui/Input';
-import { EmergencyButton } from '@/components/ui/EmergencyButton';
+import { Logo } from '@/components/ui/Logo';
+import { FloatingEmergencyButton } from '@/components/features/FloatingEmergencyButton';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -24,41 +25,83 @@ function HomePageContent() {
   const tNav = useTranslations('navigation');
 
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 text-white">
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="relative container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              {t('welcome')}
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section - Stunning Qatar-themed */}
+      <section className="relative overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-qatar" />
+
+        {/* Decorative patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 start-0 w-96 h-96 bg-white/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 end-0 w-96 h-96 bg-qatar-gold/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+          <div className="absolute top-1/2 start-1/2 w-64 h-64 bg-white/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
+        </div>
+
+        {/* Qatar serrated pattern on side */}
+        <div className="absolute start-0 top-0 bottom-0 w-8 md:w-16 overflow-hidden opacity-20">
+          <svg className="h-full w-full" preserveAspectRatio="none" viewBox="0 0 40 800">
+            <path
+              d="M0,0 L40,30 L0,60 L40,90 L0,120 L40,150 L0,180 L40,210 L0,240 L40,270 L0,300 L40,330 L0,360 L40,390 L0,420 L40,450 L0,480 L40,510 L0,540 L40,570 L0,600 L40,630 L0,660 L40,690 L0,720 L40,750 L0,780 L40,810 L0,840"
+              fill="white"
+              stroke="none"
+            />
+          </svg>
+        </div>
+
+        <div className="relative container mx-auto px-4 py-20 md:py-32">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Countdown or Logo badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm mb-8 animate-fade-in-down">
+              <span className="w-2 h-2 bg-qatar-gold rounded-full animate-pulse" />
+              <span>The 2030 Asian Games</span>
+              <span className="text-qatar-gold font-semibold">Coming Soon</span>
+            </div>
+
+            {/* Main heading with gradient */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
+              <span className="text-white drop-shadow-lg">
+                {t('welcome')}
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-2">
-              {t('location')}
-            </p>
-            <p className="text-lg text-white/80 mb-8">
+
+            {/* Location with gold accent */}
+            <div className="flex items-center justify-center gap-3 mb-4 animate-fade-in">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-qatar-gold" />
+              <p className="text-2xl md:text-3xl font-light text-qatar-gold">
+                {t('location')}
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-qatar-gold" />
+            </div>
+
+            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
               {t('tagline')}
             </p>
 
-            {/* Search bar */}
-            <div className="max-w-xl mx-auto mb-8">
-              <Input
-                type="search"
-                placeholder={tCommon('searchPlaceholder')}
-                size="lg"
-                className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:bg-white/20"
-                leftElement={
-                  <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                }
-                aria-label={tCommon('search')}
-              />
+            {/* Search bar with glass effect */}
+            <div className="max-w-2xl mx-auto mb-10 animate-fade-in-up">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-qatar-gold/50 via-white/30 to-qatar-gold/50 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
+                <div className="relative">
+                  <Input
+                    type="search"
+                    placeholder={tCommon('searchPlaceholder')}
+                    size="lg"
+                    className="bg-white/10 backdrop-blur-md border-white/20 text-white placeholder:text-white/50 focus:bg-white/20 focus:border-qatar-gold/50 rounded-xl h-14 ps-14 text-lg"
+                    aria-label={tCommon('search')}
+                  />
+                  <div className="absolute start-5 top-1/2 -translate-y-1/2">
+                    <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Quick access buttons */}
-            <div className="flex flex-wrap justify-center gap-3">
-              <QuickAccessButton href="/events" icon={<EventsIcon />}>
+            {/* Quick access buttons with hover effects */}
+            <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up">
+              <QuickAccessButton href="/events" icon={<EventsIcon />} primary>
                 {t('quickAccess.events')}
               </QuickAccessButton>
               <QuickAccessButton href="/venues" icon={<VenuesIcon />}>
@@ -73,17 +116,31 @@ function HomePageContent() {
             </div>
           </div>
         </div>
+
+        {/* Wave separator */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path
+              d="M0 120L48 110C96 100 192 80 288 75C384 70 480 80 576 85C672 90 768 90 864 85C960 80 1056 70 1152 70C1248 70 1344 80 1392 85L1440 90V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0Z"
+              className="fill-gray-50 dark:fill-gray-900"
+            />
+          </svg>
+        </div>
       </section>
 
-      {/* Live Ticker */}
-      <section className="bg-gray-900 text-white py-3 overflow-hidden">
-        <div className="container mx-auto px-4">
+      {/* Live Ticker - Enhanced */}
+      <section className="bg-gray-900 text-white py-4 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-qatar-maroon-dark/50 via-transparent to-qatar-maroon-dark/50" />
+        <div className="container mx-auto px-4 relative">
           <div className="flex items-center gap-4">
-            <Badge variant="live" className="shrink-0">
-              {tCommon('live')}
+            <Badge className="shrink-0 bg-red-500 text-white animate-pulse px-3 py-1">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-white rounded-full" />
+                {tCommon('live')}
+              </span>
             </Badge>
             <div className="flex-1 overflow-hidden">
-              <p className="animate-marquee whitespace-nowrap">
+              <p className="whitespace-nowrap text-gray-300">
                 {t('liveTicker.noLiveEvents')} • Check back during the games for live updates
               </p>
             </div>
@@ -91,153 +148,248 @@ function HomePageContent() {
         </div>
       </section>
 
-      {/* Recommendations Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
+      {/* Recommendations Section - Enhanced cards */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {t('recommendations.title')}
-            </h2>
-            <Link href="/events" className="text-primary-500 hover:text-primary-600 font-medium">
-              {tCommon('viewAll')} →
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                {t('recommendations.title')}
+              </h2>
+              <p className="text-gray-500 dark:text-gray-400">Personalized picks just for you</p>
+            </div>
+            <Link
+              href="/events"
+              className="hidden md:inline-flex items-center gap-2 text-qatar-maroon dark:text-qatar-gold hover:gap-3 font-semibold transition-all"
+            >
+              {tCommon('viewAll')}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </div>
 
-          {/* Placeholder cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Event cards with stunning styling */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
               <EventCard key={i} index={i} />
             ))}
           </div>
+
+          <div className="mt-8 text-center md:hidden">
+            <Link
+              href="/events"
+              className="inline-flex items-center gap-2 text-qatar-maroon dark:text-qatar-gold font-semibold"
+            >
+              {tCommon('viewAll')}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Quick Access Grid */}
-      <section className="py-12">
+      {/* Quick Access Grid - Premium cards */}
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center">
+            Explore the Games
+          </h2>
+          <p className="text-gray-500 dark:text-gray-400 text-center mb-10">
+            Everything you need at your fingertips
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <QuickAccessCard
               href="/culture"
               icon={<CultureIcon />}
               title={t('culturalExplorer.title')}
               description={t('culturalExplorer.subtitle')}
-              color="bg-purple-500"
+              gradient="from-purple-500 to-indigo-600"
             />
             <QuickAccessCard
               href="/emergency"
               icon={<EmergencyIcon />}
               title={tNav('emergency')}
               description="Get help quickly"
-              color="bg-red-500"
+              gradient="from-red-500 to-rose-600"
             />
             <QuickAccessCard
               href="/transport"
               icon={<TransportIcon />}
               title={t('ecoTransport.title')}
               description="Green transport options"
-              color="bg-green-500"
+              gradient="from-emerald-500 to-teal-600"
             />
             <QuickAccessCard
               href="/venues"
               icon={<SeatIcon />}
               title="Seat Guide"
               description="Find your perfect seat"
-              color="bg-blue-500"
+              gradient="from-blue-500 to-cyan-600"
             />
             <QuickAccessCard
               href="/sustainability"
               icon={<SustainabilityIcon />}
               title="Sustainability"
               description="Eco initiatives"
-              color="bg-teal-500"
+              gradient="from-green-500 to-emerald-600"
             />
             <QuickAccessCard
               href="/tickets"
               icon={<ScheduleIcon />}
               title="My Schedule"
               description="Your events"
-              color="bg-orange-500"
+              gradient="from-qatar-maroon to-qatar-maroon-light"
             />
           </div>
         </div>
       </section>
 
-      {/* Cultural Explorer Preview */}
-      <section className="py-12 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-6">
+      {/* Cultural Explorer Preview - Stunning gradient */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background with mesh gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800" />
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 end-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 start-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
             <div>
-              <h2 className="text-2xl font-bold">{t('culturalExplorer.title')}</h2>
-              <p className="text-white/80">{t('culturalExplorer.subtitle')}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{t('culturalExplorer.title')}</h2>
+              <p className="text-white/70 text-lg">{t('culturalExplorer.subtitle')}</p>
             </div>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
+            >
               {t('culturalExplorer.explore')}
             </Button>
           </div>
 
-          {/* Country flags carousel placeholder */}
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-            {['🇯🇵', '🇰🇷', '🇨🇳', '🇮🇳', '🇹🇭', '🇸🇦', '🇮🇩', '🇻🇳', '🇵🇭', '🇲🇾'].map((flag, i) => (
-              <div
+          {/* Country flags carousel with glass cards */}
+          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4">
+            {[
+              { flag: '🇯🇵', name: 'Japan' },
+              { flag: '🇰🇷', name: 'Korea' },
+              { flag: '🇨🇳', name: 'China' },
+              { flag: '🇮🇳', name: 'India' },
+              { flag: '🇹🇭', name: 'Thailand' },
+              { flag: '🇶🇦', name: 'Qatar' },
+              { flag: '🇸🇦', name: 'Saudi Arabia' },
+              { flag: '🇮🇩', name: 'Indonesia' },
+              { flag: '🇻🇳', name: 'Vietnam' },
+              { flag: '🇵🇭', name: 'Philippines' },
+            ].map((country, i) => (
+              <Link
                 key={i}
-                className="shrink-0 w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center text-4xl hover:bg-white/20 cursor-pointer transition-colors"
+                href="/culture"
+                className="shrink-0 group"
               >
-                {flag}
+                <div className="w-24 h-28 bg-white/10 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center hover:bg-white/20 hover:scale-105 cursor-pointer transition-all duration-300 border border-white/10">
+                  <span className="text-4xl mb-2 group-hover:scale-110 transition-transform">{country.flag}</span>
+                  <span className="text-white/80 text-xs font-medium">{country.name}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Eco Transport Widget - Enhanced */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 p-8 md:p-12">
+            {/* Decorative elements */}
+            <div className="absolute top-0 end-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 start-0 w-48 h-48 bg-teal-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+
+            <div className="relative">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-4xl">🌱</span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">
+                      {t('ecoTransport.title')}
+                    </h2>
+                  </div>
+                  <p className="text-white/80">Choose green, travel clean</p>
+                </div>
+                <div className="flex items-center gap-3 px-5 py-3 bg-white/20 backdrop-blur-sm rounded-xl">
+                  <span className="text-2xl">🌳</span>
+                  <div>
+                    <p className="text-white/70 text-sm">Carbon saved today</p>
+                    <p className="text-white font-bold text-xl">2.5 kg CO₂</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <TransportOption icon="🚇" label={t('ecoTransport.metro')} time="3 min" eco="A+" />
+                <TransportOption icon="🚌" label={t('ecoTransport.bus')} time="8 min" eco="A" />
+                <TransportOption icon="🚲" label={t('ecoTransport.bike')} time="15 min" eco="A+" />
+                <TransportOption icon="🚶" label="Walk" time="25 min" eco="A+" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: '45', label: 'Sports', suffix: '+' },
+              { number: '12', label: 'Venues', suffix: '' },
+              { number: '46', label: 'Countries', suffix: '' },
+              { number: '10K', label: 'Athletes', suffix: '+' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-qatar-maroon to-qatar-maroon-light bg-clip-text text-transparent mb-2">
+                  {stat.number}{stat.suffix}
+                </div>
+                <div className="text-gray-500 dark:text-gray-400 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Eco Transport Widget */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
-            <CardHeader
-              title={
-                <span className="flex items-center gap-2">
-                  <span className="text-green-600">🌱</span>
-                  {t('ecoTransport.title')}
-                </span>
-              }
-            />
-            <CardBody>
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                <TransportOption icon="🚇" label={t('ecoTransport.metro')} time="3 min" />
-                <TransportOption icon="🚌" label={t('ecoTransport.bus')} time="8 min" />
-                <TransportOption icon="🚲" label={t('ecoTransport.bike')} time="15 min" />
-              </div>
-              <p className="text-sm text-green-700 dark:text-green-400">
-                {t('ecoTransport.carbonSaved', { amount: '2.5kg CO₂' })} 🌳
-              </p>
-            </CardBody>
-          </Card>
-        </div>
-      </section>
-
       {/* Floating Emergency Button (desktop only) */}
-      <div className="hidden md:block fixed bottom-6 end-6 z-50">
-        <EmergencyButton onClick={() => window.location.href = 'tel:999'} />
-      </div>
+      <FloatingEmergencyButton />
     </div>
   );
 }
 
-// Helper Components
+// Enhanced Helper Components
 
 function QuickAccessButton({
   href,
   icon,
   children,
+  primary = false,
 }: {
   href: string;
   icon: React.ReactNode;
   children: React.ReactNode;
+  primary?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-full text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      className={`
+        inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-qatar-maroon
+        ${primary
+          ? 'bg-qatar-gold text-qatar-maroon-dark hover:bg-qatar-gold-light hover:shadow-lg hover:shadow-qatar-gold/30 hover:-translate-y-0.5'
+          : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20 hover:border-white/40'
+        }
+      `}
     >
       {icon}
       {children}
@@ -246,29 +398,62 @@ function QuickAccessButton({
 }
 
 function EventCard({ index }: { index: number }) {
-  const sports = ['⚽', '🏊', '🏸', '🏃'];
-  const names = ['Football', 'Swimming', 'Badminton', 'Athletics'];
+  const events = [
+    { sport: '⚽', name: 'Football Finals', venue: 'Lusail Stadium', price: '150', badge: 'Final', badgeColor: 'bg-qatar-gold text-qatar-maroon-dark' },
+    { sport: '🏊', name: 'Swimming 100m', venue: 'Aquatics Centre', price: '80', badge: 'Medal Event', badgeColor: 'bg-amber-500 text-white' },
+    { sport: '🏸', name: 'Badminton Mixed', venue: 'Indoor Arena', price: '50', badge: 'Semi-Final', badgeColor: 'bg-blue-500 text-white' },
+    { sport: '🏃', name: 'Marathon', venue: 'Doha Corniche', price: '30', badge: 'Popular', badgeColor: 'bg-green-500 text-white' },
+  ];
+
+  const event = events[index - 1];
 
   return (
-    <Card variant="interactive" as="article">
-      <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-4xl">
-        {sports[index - 1]}
-      </div>
-      <div className="p-4">
-        <Badge variant="primary" size="sm" className="mb-2">
-          Upcoming
-        </Badge>
-        <h3 className="font-semibold text-gray-900 dark:text-white">
-          {names[index - 1]} Event
-        </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Tomorrow, 14:00 • Lusail Stadium
-        </p>
-        <p className="text-sm font-medium text-primary-500 mt-2">
-          From 50 QAR
-        </p>
-      </div>
-    </Card>
+    <Link href="/events" className="group">
+      <Card className="overflow-hidden border-0 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-gray-800">
+        {/* Image area with gradient overlay */}
+        <div className="relative aspect-[4/3] bg-gradient-to-br from-qatar-maroon to-qatar-maroon-dark overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-6xl group-hover:scale-110 transition-transform duration-500">{event.sport}</span>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+          {/* Badge */}
+          <div className="absolute top-3 end-3">
+            <span className={`px-3 py-1 rounded-full text-xs font-bold ${event.badgeColor}`}>
+              {event.badge}
+            </span>
+          </div>
+
+          {/* Event info overlay */}
+          <div className="absolute bottom-0 inset-x-0 p-4">
+            <h3 className="font-bold text-white text-lg mb-1 group-hover:text-qatar-gold transition-colors">
+              {event.name}
+            </h3>
+            <p className="text-white/80 text-sm flex items-center gap-1">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
+              {event.venue}
+            </p>
+          </div>
+        </div>
+
+        {/* Card footer */}
+        <div className="p-4 flex items-center justify-between">
+          <div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Tomorrow, 14:00</p>
+            <p className="text-qatar-maroon dark:text-qatar-gold font-bold text-lg">
+              From {event.price} QAR
+            </p>
+          </div>
+          <div className="w-10 h-10 rounded-full bg-qatar-maroon/10 dark:bg-qatar-gold/10 flex items-center justify-center group-hover:bg-qatar-maroon group-hover:text-white dark:group-hover:bg-qatar-gold dark:group-hover:text-qatar-maroon-dark transition-all">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      </Card>
+    </Link>
   );
 }
 
@@ -277,28 +462,33 @@ function QuickAccessCard({
   icon,
   title,
   description,
-  color,
+  gradient,
 }: {
   href: string;
   icon: React.ReactNode;
   title: string;
   description: string;
-  color: string;
+  gradient: string;
 }) {
   return (
     <Link
       href={href}
-      className="group p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:shadow-md transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+      className="group relative overflow-hidden p-5 md:p-6 rounded-2xl bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 hover:border-transparent hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
     >
-      <div className={`w-12 h-12 ${color} rounded-lg flex items-center justify-center text-white mb-3`}>
-        {icon}
+      {/* Gradient overlay on hover */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+      <div className="relative">
+        <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
+          {icon}
+        </div>
+        <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-white transition-colors text-lg mb-1">
+          {title}
+        </h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors">
+          {description}
+        </p>
       </div>
-      <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 transition-colors">
-        {title}
-      </h3>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-        {description}
-      </p>
     </Link>
   );
 }
@@ -307,21 +497,28 @@ function TransportOption({
   icon,
   label,
   time,
+  eco,
 }: {
   icon: string;
   label: string;
   time: string;
+  eco: string;
 }) {
   return (
-    <div className="text-center p-3 bg-white dark:bg-gray-800 rounded-lg">
-      <div className="text-2xl mb-1">{icon}</div>
-      <div className="font-medium text-gray-900 dark:text-white text-sm">{label}</div>
-      <div className="text-xs text-gray-500 dark:text-gray-400">{time}</div>
+    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 hover:bg-white/30 transition-all cursor-pointer group">
+      <div className="flex items-start justify-between mb-2">
+        <span className="text-3xl group-hover:scale-110 transition-transform">{icon}</span>
+        <span className="text-xs font-bold bg-white/30 px-2 py-1 rounded-full text-white">
+          {eco}
+        </span>
+      </div>
+      <div className="font-semibold text-white">{label}</div>
+      <div className="text-sm text-white/70">{time} away</div>
     </div>
   );
 }
 
-// Icons
+// Icons with consistent styling
 function EventsIcon() {
   return (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

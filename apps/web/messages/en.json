@@ -33,7 +33,14 @@
     "now": "Now",
     "live": "LIVE",
     "upcoming": "Upcoming",
-    "past": "Past"
+    "past": "Past",
+    "from": "From",
+    "to": "To",
+    "price": "Price",
+    "free": "Free",
+    "available": "Available",
+    "soldOut": "Sold Out",
+    "comingSoon": "Coming Soon"
   },
   "navigation": {
     "home": "Home",
@@ -46,7 +53,9 @@
     "settings": "Settings",
     "notifications": "Notifications",
     "help": "Help",
-    "emergency": "Emergency"
+    "emergency": "Emergency",
+    "cart": "Cart",
+    "sustainability": "Sustainability"
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
@@ -66,6 +75,8 @@
     "welcome": "Welcome to the 2030 Asian Games",
     "location": "Doha, Qatar",
     "tagline": "Experience Asia's biggest sporting event",
+    "comingSoon": "Coming Soon",
+    "theAsianGames": "The 2030 Asian Games",
     "quickAccess": {
       "events": "Events",
       "eventsDesc": "Browse all sporting events",
@@ -100,11 +111,26 @@
       "bus": "Bus",
       "bike": "Bike",
       "shuttle": "Shuttle"
-    }
+    },
+    "stats": {
+      "sports": "Sports",
+      "venues": "Venues",
+      "countries": "Countries",
+      "athletes": "Athletes"
+    },
+    "exploreGames": "Explore the Games",
+    "everythingYouNeed": "Everything you need at your fingertips"
   },
   "events": {
     "title": "Events",
     "subtitle": "Explore all sporting events",
+    "filterBySport": "Filter by Sport",
+    "filterByCategory": "Filter by Category",
+    "allSports": "All Sports",
+    "allCategories": "All Categories",
+    "showingEvents": "Showing {count} events",
+    "noEventsFound": "No events found",
+    "clearFilters": "Clear Filters",
     "filters": {
       "sport": "Sport",
       "date": "Date",
@@ -130,7 +156,9 @@
       "semifinal": "Semifinal",
       "final": "Final",
       "groupStage": "Group Stage",
-      "knockout": "Knockout"
+      "group": "Group Stage",
+      "knockout": "Knockout",
+      "quarterfinal": "Quarterfinal"
     },
     "card": {
       "from": "From",
@@ -138,20 +166,38 @@
       "soldOut": "Sold out",
       "getTickets": "Get tickets",
       "addToCalendar": "Add to calendar",
-      "setReminder": "Set reminder"
+      "setReminder": "Set reminder",
+      "viewDetails": "View Details"
     },
     "detail": {
       "about": "About this event",
       "schedule": "Schedule",
       "participants": "Participants",
+      "participatingAthletes": "Participating Athletes",
       "venue": "Venue",
+      "venueInfo": "Venue Information",
       "howToGetThere": "How to get there",
-      "similarEvents": "Similar events"
+      "similarEvents": "Similar events",
+      "selectTickets": "Select Tickets",
+      "chooseSection": "Choose Section",
+      "quantity": "Quantity",
+      "addToCart": "Add to Cart",
+      "viewCart": "View Cart",
+      "total": "Total",
+      "serviceFee": "Service Fee",
+      "seatsAvailable": "seats available"
     }
   },
   "venues": {
     "title": "Venues",
     "subtitle": "Explore stadiums and arenas",
+    "worldClassVenues": "World-class Venues",
+    "totalCapacity": "Total Capacity",
+    "sportsHosted": "Sports Hosted",
+    "accessible": "Accessible",
+    "upcomingEvents": "upcoming events",
+    "viewDetails": "View Details",
+    "venuesMap": "Venues Map",
     "filters": {
       "type": "Venue type",
       "sport": "Sport",
@@ -172,12 +218,16 @@
     },
     "detail": {
       "about": "About this venue",
-      "upcomingEvents": "Upcoming events",
+      "upcomingEvents": "Upcoming Events",
+      "sportsAtVenue": "Sports at this Venue",
       "facilities": "Facilities",
       "accessibility": "Accessibility",
-      "gettingThere": "Getting there",
+      "gettingThere": "Getting There",
+      "location": "Location",
       "seating": "Seating guide",
-      "emergencyExits": "Emergency exits"
+      "emergencyExits": "Emergency exits",
+      "planYourJourney": "Plan Your Journey",
+      "exploreOtherVenues": "Explore Other Venues"
     },
     "accessibility": {
       "wheelchairAccess": "Wheelchair accessible",
@@ -185,6 +235,14 @@
       "brailleSignage": "Braille signage",
       "accessibleParking": "Accessible parking",
       "assistanceDogs": "Assistance dogs welcome"
+    },
+    "transport": {
+      "metro": "Metro",
+      "bus": "Bus",
+      "parking": "Parking",
+      "nearestStation": "nearest station",
+      "eventShuttles": "Event shuttles available",
+      "spacesAvailable": "spaces available"
     }
   },
   "tickets": {
@@ -192,6 +250,10 @@
     "subtitle": "Your event tickets",
     "empty": "You don't have any tickets yet",
     "browseEvents": "Browse events",
+    "allTickets": "All Tickets",
+    "active": "Active",
+    "used": "Used",
+    "expired": "Expired",
     "status": {
       "active": "Active",
       "used": "Used",
@@ -201,10 +263,28 @@
     },
     "card": {
       "viewTicket": "View ticket",
-      "showQR": "Show QR code",
+      "showQR": "Show QR",
       "addToWallet": "Add to wallet",
-      "getDirections": "Get directions",
+      "getDirections": "Directions",
+      "viewEvent": "View Event",
       "seatInfo": "Section {section}, Row {row}, Seat {seat}"
+    },
+    "qrCode": {
+      "title": "Your Ticket QR Code",
+      "showAtEntrance": "Show this QR code at the venue entrance"
+    },
+    "directions": {
+      "title": "Directions to",
+      "drive": "Drive",
+      "transit": "Transit",
+      "walk": "Walk",
+      "openInMaps": "Open in Maps"
+    },
+    "wallet": {
+      "title": "Add tickets to your wallet",
+      "description": "Access your tickets quickly with Apple Wallet or Google Wallet",
+      "appleWallet": "Apple Wallet",
+      "googleWallet": "Google Wallet"
     },
     "purchase": {
       "selectSeats": "Select seats",
@@ -216,6 +296,23 @@
       "serviceFee": "Service fee",
       "subtotal": "Subtotal"
     }
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your Cart is Empty",
+    "emptyDescription": "Looks like you haven't added any tickets yet. Browse events to find something exciting!",
+    "itemsInCart": "{count} item(s) in your cart",
+    "clearCart": "Clear Cart",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "serviceFee": "Service Fee",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "promoCode": "Have a promo code?",
+    "enterCode": "Enter code",
+    "apply": "Apply",
+    "securePayment": "Your payment information is secure and encrypted",
+    "termsAgreement": "By proceeding, you agree to our Terms of Service and Refund Policy"
   },
   "transport": {
     "title": "Transport",
@@ -241,19 +338,25 @@
       "direct": "Direct",
       "frequency": "Every {minutes} min",
       "nextArrival": "Next in {minutes} min",
-      "carbonSaving": "Save {amount} CO₂"
+      "carbonSaving": "Save {amount} CO₂",
+      "away": "away"
     },
     "eco": {
       "title": "Eco-friendly options",
-      "description": "Reduce your carbon footprint",
+      "description": "Choose green, travel clean",
       "carbonRating": "Carbon rating",
-      "greenChoice": "Green choice"
+      "greenChoice": "Green choice",
+      "carbonSavedToday": "Carbon saved today"
     }
   },
   "culture": {
     "title": "Cultural Explorer",
     "subtitle": "Discover the rich cultures of Asia",
+    "searchPlaceholder": "Search countries, traditions, cuisines...",
+    "exploring": "Exploring {count} countries",
+    "noCountriesFound": "No countries found",
     "regions": {
+      "all": "All Regions",
       "eastAsia": "East Asia",
       "southAsia": "South Asia",
       "southeastAsia": "Southeast Asia",
@@ -261,18 +364,28 @@
       "centralAsia": "Central Asia"
     },
     "country": {
-      "highlights": "Cultural highlights",
+      "highlights": "Cultural Highlights",
       "traditions": "Traditions",
       "cuisine": "Cuisine",
       "arts": "Arts & crafts",
-      "sports": "Traditional sports",
-      "athletes": "Athletes competing"
-    }
+      "sports": "Popular Sports",
+      "athletes": "Athletes Competing",
+      "funFacts": "Fun Facts",
+      "watchCompete": "Watch {country} Compete!",
+      "getTickets": "Get tickets to see athletes from {country} in action at the 2030 Asian Games."
+    },
+    "didYouKnow": "Did You Know?",
+    "countriesCompeting": "Athletes from 46 Asian nations will compete in the 2030 Games",
+    "languages": "Asia is home to over 2,300 languages across its diverse regions",
+    "culinaryParadise": "Experience cuisines from all across Asia at the Games",
+    "exploreMore": "Explore More Countries"
   },
   "emergency": {
     "title": "Emergency",
     "subtitle": "Get help quickly",
     "button": "Emergency Contact",
+    "callNow": "Call Now",
+    "available24": "Available 24/7",
     "contacts": {
       "police": "Police",
       "ambulance": "Ambulance",
@@ -312,38 +425,78 @@
     "title": "Sustainability",
     "subtitle": "Our commitment to a green games",
     "yourImpact": "Your eco impact",
+    "greenImpact": "Your Green Impact",
+    "trackImpact": "Track your sustainable choices during the Games and see your positive impact.",
+    "viewFullReport": "View Full Report",
+    "co2Saved": "CO₂ saved",
+    "waterSaved": "Water saved",
+    "greenActions": "Green actions",
     "initiatives": {
-      "title": "Green initiatives",
+      "title": "Sustainability Initiatives",
       "renewableEnergy": "Renewable energy",
       "wasteReduction": "Waste reduction",
       "waterConservation": "Water conservation",
       "carbonNeutral": "Carbon neutral"
     },
+    "howYouCanHelp": "How You Can Help",
     "tips": {
       "title": "Eco tips",
       "bringWaterBottle": "Bring a reusable water bottle",
       "usePublicTransport": "Use public transport",
-      "recycle": "Recycle your waste"
+      "recycle": "Recycle your waste",
+      "walkOrBike": "Walk or Bike",
+      "walkOrBikeDesc": "Use dedicated pedestrian paths and bike-sharing stations between nearby venues.",
+      "bringYourBottle": "Bring Your Bottle",
+      "bringYourBottleDesc": "Free water refill stations are available at all venues. Skip single-use plastics.",
+      "sortWaste": "Sort Your Waste",
+      "sortWasteDesc": "Look for color-coded bins: Blue for recycling, Green for compost, Black for general.",
+      "goDigital": "Go Digital",
+      "goDigitalDesc": "Use digital tickets and programs. Save paper and skip the queues.",
+      "beatHeat": "Beat the Heat Smartly",
+      "beatHeatDesc": "Visit cooled zones instead of using personal fans. Venues have efficient cooling systems.",
+      "chooseLocal": "Choose Local",
+      "chooseLocalDesc": "Support local food vendors using sustainably sourced ingredients."
+    },
+    "pledge": {
+      "title": "Take the Green Pledge",
+      "description": "Commit to sustainable practices during the Games and earn exclusive eco-badges and rewards.",
+      "takePledge": "Take the Pledge",
+      "pledgeCount": "Over 50,000 visitors have already pledged!"
+    },
+    "sdg": {
+      "title": "Aligned with UN Sustainable Development Goals"
     },
     "score": "Sustainability score"
   },
   "notifications": {
     "title": "Notifications",
     "empty": "No notifications yet",
+    "allCaughtUp": "All caught up!",
+    "unreadCount": "{count} unread notification(s)",
     "markAllRead": "Mark all as read",
+    "markAsRead": "Mark as read",
+    "delete": "Delete",
+    "viewDetails": "View Details",
+    "noNotifications": "No notifications",
+    "checkBackLater": "You're all caught up! Check back later for updates.",
     "types": {
       "eventReminder": "Event reminder",
       "scoreUpdate": "Score update",
       "transportAlert": "Transport alert",
       "ticketUpdate": "Ticket update",
-      "emergency": "Emergency alert"
+      "emergency": "Emergency alert",
+      "event": "Event",
+      "ticket": "Ticket",
+      "transport": "Transport",
+      "general": "General"
     },
     "preferences": {
-      "title": "Notification preferences",
-      "eventReminders": "Event reminders",
+      "title": "Notification Preferences",
+      "eventReminders": "Event updates and reminders",
       "scoreUpdates": "Live score updates",
       "transportAlerts": "Transport alerts",
-      "emergencyAlerts": "Emergency alerts (always on)"
+      "emergencyAlerts": "Emergency notifications",
+      "promotional": "Promotional offers"
     }
   },
   "profile": {
@@ -353,6 +506,7 @@
     "signUp": "Create account",
     "signOut": "Sign out",
     "settings": "Settings",
+    "editProfile": "Edit Profile",
     "preferences": {
       "title": "Preferences",
       "language": "Language",
@@ -362,7 +516,13 @@
     },
     "mySchedule": "My schedule",
     "favorites": "Favorites",
-    "history": "History"
+    "history": "History",
+    "quickActions": "Quick Actions",
+    "myTickets": "My Tickets",
+    "savedEvents": "Saved Events",
+    "travelPlans": "Travel Plans",
+    "accountSettings": "Account Settings",
+    "helpSupport": "Help & Support"
   },
   "errors": {
     "notFound": "Page not found",

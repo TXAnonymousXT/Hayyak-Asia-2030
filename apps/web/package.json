@@ -1,26 +1,22 @@
 {
-  "name": "@hayyak/web",
+  "name": "hayyak-web",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "test:a11y": "jest --testPathPattern=a11y"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.0",
+    "@tanstack/react-query": "^5.62.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "next": "^15.5.11",
+    "next-intl": "^3.25.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next-intl": "^3.25.0",
-    "@tanstack/react-query": "^5.62.0",
-    "zustand": "^5.0.0",
-    "clsx": "^2.1.1",
-    "class-variance-authority": "^0.7.1",
-    "@hayyak/ui": "*",
-    "@hayyak/types": "*"
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
@@ -28,10 +24,9 @@
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.16.0",
-    "eslint-config-next": "15.1.0",
+    "eslint-config-next": "^15.5.11",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.0",
-    "@hayyak/config": "*"
+    "typescript": "^5.7.0"
   }
 }

@@ -31,8 +31,8 @@ export interface LanguageSelectorProps {
  * - Prioritizes common languages
  */
 export function LanguageSelector({
-  showCommon = true,
-  commonLanguages = ['en', 'ar', 'zh', 'ja', 'ko'],
+  showCommon = false,
+  commonLanguages = ['en', 'ar'],
   variant = 'dropdown',
 }: LanguageSelectorProps) {
   const locale = useLocale() as Locale;

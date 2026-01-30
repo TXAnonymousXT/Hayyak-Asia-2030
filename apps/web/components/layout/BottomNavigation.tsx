@@ -18,15 +18,17 @@ export function BottomNavigation() {
   const pathname = usePathname();
 
   const handleEmergencyClick = () => {
-    // In a real app, this would open an emergency modal or make a call
     window.location.href = 'tel:999';
   };
 
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 z-40 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 md:hidden safe-area-bottom"
+      className="fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 md:hidden safe-area-bottom"
       aria-label="Bottom navigation"
     >
+      {/* Subtle gradient accent at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-qatar-maroon/30 to-transparent" />
+
       <div className="flex items-center justify-around h-16 px-2">
         {navItems.slice(0, 2).map((item) => (
           <NavItem
@@ -38,8 +40,9 @@ export function BottomNavigation() {
           />
         ))}
 
-        {/* Emergency button in center */}
+        {/* Emergency button in center - Enhanced */}
         <div className="relative -mt-6">
+          <div className="absolute inset-0 bg-qatar-maroon/20 rounded-full blur-xl animate-pulse-slow" />
           <EmergencyButton
             compact
             onClick={handleEmergencyClick}
@@ -61,7 +64,7 @@ export function BottomNavigation() {
   );
 }
 
-// Individual nav item
+// Individual nav item with Qatar styling
 function NavItem({
   href,
   icon: Icon,
@@ -77,17 +80,28 @@ function NavItem({
     <Link
       href={href}
       className={clsx(
-        'flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-touch px-2 py-1 rounded-lg',
-        'transition-colors',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
+        'flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-touch px-2 py-1 rounded-xl',
+        'transition-all duration-300',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-qatar-maroon',
         isActive
-          ? 'text-primary-500'
-          : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+          ? 'text-qatar-maroon dark:text-qatar-gold'
+          : 'text-gray-400 dark:text-gray-500 hover:text-qatar-maroon dark:hover:text-qatar-gold'
       )}
       aria-current={isActive ? 'page' : undefined}
     >
-      <Icon className="w-6 h-6" />
-      <span className="text-xs font-medium truncate">{label}</span>
+      <div className={clsx(
+        'relative',
+        isActive && 'after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:bg-qatar-maroon dark:after:bg-qatar-gold'
+      )}>
+        <Icon className={clsx(
+          'w-6 h-6 transition-transform duration-300',
+          isActive && 'scale-110'
+        )} />
+      </div>
+      <span className={clsx(
+        'text-xs font-medium truncate transition-all duration-300',
+        isActive ? 'font-semibold' : ''
+      )}>{label}</span>
     </Link>
   );
 }

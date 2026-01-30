@@ -2,15 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* Qatar 2030 Asian Games - Premium Design System */
+
+/* CSS Custom Properties */
 @layer base {
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-noto-sans-arabic: 'Noto Sans Arabic', system-ui, sans-serif;
+
+    /* Qatar Colors */
+    --qatar-maroon: #8D1B3D;
+    --qatar-maroon-light: #A62050;
+    --qatar-maroon-dark: #6B1530;
+    --qatar-gold: #D4AF37;
+    --qatar-gold-light: #FFD700;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    @apply antialiased;
   }
 
   /* Reduce motion for users who prefer it */
@@ -28,10 +42,14 @@
     }
   }
 
-  /* Focus visible styles */
+  /* Focus visible styles - Qatar themed */
   :focus-visible {
-    outline: 2px solid var(--color-primary-500, #F97316);
+    outline: 2px solid var(--qatar-maroon);
     outline-offset: 2px;
+  }
+
+  .dark :focus-visible {
+    outline-color: var(--qatar-gold);
   }
 
   /* Remove focus outline for mouse users */
@@ -39,16 +57,20 @@
     outline: none;
   }
 
-  /* Selection color */
+  /* Selection color - Qatar themed */
   ::selection {
-    background-color: rgba(249, 115, 22, 0.2);
+    background-color: rgba(141, 27, 61, 0.2);
     color: inherit;
   }
 
-  /* Scrollbar styling */
+  .dark ::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+  }
+
+  /* Custom scrollbar - Qatar themed */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   ::-webkit-scrollbar-track {
@@ -56,24 +78,29 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 4px;
+    background: linear-gradient(180deg, #8D1B3D, #6B1530);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #9ca3af;
+    background: linear-gradient(180deg, #A62050, #8D1B3D);
+    background-clip: content-box;
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    background: #4b5563;
+    background: linear-gradient(180deg, #D4AF37, #B8960C);
+    background-clip: content-box;
   }
 
   .dark ::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
+    background: linear-gradient(180deg, #FFD700, #D4AF37);
+    background-clip: content-box;
   }
 }
 
-/* RTL support */
+/* RTL support & Safe areas */
 @layer utilities {
   /* Logical properties shortcuts */
   .start-0 {
@@ -116,9 +143,27 @@
   .touch-pan-y {
     touch-action: pan-y;
   }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text gradient utilities */
+  .text-gradient-qatar {
+    @apply bg-gradient-to-r from-qatar-maroon to-qatar-maroon-light bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-qatar-gold to-qatar-gold-light bg-clip-text text-transparent;
+  }
 }
 
-/* Custom components */
+/* Custom Components */
 @layer components {
   /* Container with responsive padding */
   .container {
@@ -132,6 +177,8 @@
   @media (min-width: 640px) {
     .container {
       max-width: 640px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -144,6 +191,8 @@
   @media (min-width: 1024px) {
     .container {
       max-width: 1024px;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
@@ -155,32 +204,147 @@
 
   /* Skeleton loading animation */
   .skeleton {
-    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded-xl;
   }
 
-  /* Card hover effect */
+  /* Card hover effect - Enhanced */
   .card-hover {
-    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+    @apply transition-all duration-300;
   }
 
-  /* Gradient text */
+  .card-hover:hover {
+    @apply shadow-xl -translate-y-1;
+  }
+
+  /* Gradient text - Qatar themed */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-qatar-maroon to-qatar-maroon-light;
   }
 
-  /* Live indicator */
+  .dark .gradient-text {
+    @apply from-qatar-gold to-qatar-gold-light;
+  }
+
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+
+  /* Qatar gradient backgrounds */
+  .bg-qatar-gradient {
+    @apply bg-gradient-to-br from-qatar-maroon via-qatar-maroon to-qatar-maroon-dark;
+  }
+
+  .bg-gold-gradient {
+    @apply bg-gradient-to-br from-qatar-gold via-qatar-gold-light to-qatar-gold;
+  }
+
+  /* Live indicator - Enhanced */
   .live-indicator {
-    @apply relative;
+    @apply relative ps-4;
   }
 
   .live-indicator::before {
     content: '';
-    @apply absolute -start-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-red-500 rounded-full animate-ping;
+    @apply absolute start-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-red-500 rounded-full animate-ping;
   }
 
   .live-indicator::after {
     content: '';
-    @apply absolute -start-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-red-500 rounded-full;
+    @apply absolute start-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-red-500 rounded-full;
+  }
+
+  /* Shine effect on hover */
+  .shine-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .shine-effect::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  }
+
+  .shine-effect:hover::after {
+    @apply translate-x-full;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Marquee animation for live ticker */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  [dir="rtl"] .animate-marquee {
+    animation: marquee-rtl 30s linear infinite;
+  }
+
+  @keyframes marquee-rtl {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Page transition */
+  .page-transition {
+    @apply animate-fade-in-up;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply relative;
+  }
+
+  .section-divider::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-qatar-maroon to-transparent rounded-full;
+  }
+
+  .dark .section-divider::after {
+    @apply via-qatar-gold;
+  }
+}
+
+/* Premium Button Animations */
+@layer utilities {
+  .btn-glow {
+    @apply relative;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at center, rgba(141, 27, 61, 0.4) 0%, transparent 70%);
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .dark .btn-glow::before {
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
   }
 }
 
@@ -188,5 +352,21 @@
 @media print {
   .no-print {
     display: none !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --qatar-maroon: #6B0F28;
+    --qatar-gold: #B8860B;
+  }
+
+  .glass-card {
+    @apply bg-white/30 border-2 border-white/50;
   }
 }
