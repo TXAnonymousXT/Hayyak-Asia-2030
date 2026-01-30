@@ -275,6 +275,127 @@
     transition: transform 0.6s ease-in-out;
   }
 
+  /* Premium card glow effect */
+  .card-glow {
+    @apply relative;
+  }
+
+  .card-glow::before {
+    content: '';
+    @apply absolute -inset-1 rounded-3xl opacity-0 blur-xl transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(141, 27, 61, 0.3), rgba(212, 175, 55, 0.3));
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Staggered animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+
+  /* Card lift effect */
+  .card-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .card-lift:hover {
+    @apply -translate-y-3 shadow-2xl;
+  }
+
+  /* Icon bounce on hover */
+  .icon-bounce:hover .icon-target {
+    animation: iconBounce 0.6s ease-in-out;
+  }
+
+  @keyframes iconBounce {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.1); }
+  }
+
+  /* Border glow animation */
+  .border-glow {
+    @apply relative;
+  }
+
+  .border-glow::after {
+    content: '';
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(141, 27, 61, 0.5), rgba(212, 175, 55, 0.5));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 2px;
+  }
+
+  .border-glow:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Subtle pulse on focus */
+  .focus-pulse:focus-within {
+    animation: focusPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes focusPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(141, 27, 61, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(141, 27, 61, 0); }
+  }
+
+  /* Ripple effect */
+  .ripple-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .ripple-effect::after {
+    content: '';
+    @apply absolute inset-0 opacity-0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+  }
+
+  .ripple-effect:active::after {
+    @apply opacity-100;
+    transform: scale(2);
+  }
+
+  /* Smooth entrance animation */
+  .animate-in {
+    animation: smoothIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes smoothIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Hover underline effect */
+  .hover-underline {
+    @apply relative;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-qatar-maroon dark:bg-qatar-gold transition-all duration-300;
+  }
+
+  .hover-underline:hover::after {
+    @apply w-full;
+  }
+
   /* Floating animation */
   .float {
     animation: float 6s ease-in-out infinite;

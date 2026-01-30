@@ -185,6 +185,8 @@ const config: Config = {
         'spin-slow': 'spin 8s linear infinite',
         'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
         'gradient-shift': 'gradientShift 8s ease infinite',
+        'pop': 'pop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'wiggle': 'wiggle 0.5s ease-in-out',
       },
 
       keyframes: {
@@ -239,6 +241,16 @@ const config: Config = {
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        pop: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '40%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(-3deg)' },
+          '75%': { transform: 'rotate(3deg)' },
         },
       },
 

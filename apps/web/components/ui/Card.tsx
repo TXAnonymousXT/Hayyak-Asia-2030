@@ -5,34 +5,47 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { clsx } from 'clsx';
 
 const cardVariants = cva(
-  'rounded-2xl bg-white dark:bg-gray-800 overflow-hidden transition-all duration-300',
+  'rounded-2xl bg-white dark:bg-gray-800 overflow-hidden transition-all duration-500 ease-out',
   {
     variants: {
       variant: {
-        default: 'border border-gray-200 dark:border-gray-700 shadow-sm',
-        elevated: 'shadow-card hover:shadow-card-hover',
-        outline: 'border-2 border-gray-200 dark:border-gray-700',
-        ghost: 'bg-transparent',
+        default: 'border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg',
+        elevated: 'shadow-card hover:shadow-card-hover hover:-translate-y-1',
+        outline: 'border-2 border-gray-200 dark:border-gray-700 hover:border-qatar-maroon/40 dark:hover:border-qatar-gold/40',
+        ghost: 'bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800/50',
         interactive: `
           border border-gray-200 dark:border-gray-700
           cursor-pointer shadow-sm
-          hover:border-qatar-maroon/30 hover:shadow-card-hover hover:-translate-y-1
-          dark:hover:border-qatar-gold/30
+          hover:border-qatar-maroon/40 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]
+          dark:hover:border-qatar-gold/40
           focus-within:ring-2 focus-within:ring-qatar-maroon focus-within:ring-offset-2
           dark:focus-within:ring-qatar-gold
+          active:scale-[0.98] active:shadow-md
         `,
         glass: `
           bg-white/10 backdrop-blur-lg border border-white/20
-          shadow-lg
+          shadow-lg hover:bg-white/15 hover:border-white/30 hover:shadow-xl
         `,
         qatar: `
           border-2 border-qatar-maroon/20 dark:border-qatar-gold/20
-          shadow-sm hover:shadow-glow
+          shadow-sm hover:shadow-glow hover:-translate-y-1
           dark:hover:shadow-glow-gold
+          hover:border-qatar-maroon/40 dark:hover:border-qatar-gold/40
         `,
         gradient: `
           bg-gradient-to-br from-qatar-maroon to-qatar-maroon-dark text-white
-          shadow-lg shadow-qatar-maroon/20
+          shadow-lg shadow-qatar-maroon/20 hover:shadow-xl hover:shadow-qatar-maroon/30
+          hover:-translate-y-1 hover:from-qatar-maroon-light hover:to-qatar-maroon
+        `,
+        premium: `
+          border border-gray-200/50 dark:border-gray-700/50
+          shadow-lg backdrop-blur-sm
+          hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02]
+          hover:border-qatar-gold/50 dark:hover:border-qatar-gold/50
+          before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br 
+          before:from-qatar-gold/5 before:to-transparent before:opacity-0 
+          hover:before:opacity-100 before:transition-opacity before:duration-500
+          relative
         `,
       },
       padding: {
@@ -192,7 +205,7 @@ export const CardImage = forwardRef<HTMLDivElement, CardImageProps>(
         <img
           src={src}
           alt={alt}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
           loading="lazy"
         />
         {children && (

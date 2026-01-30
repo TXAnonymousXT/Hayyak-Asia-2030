@@ -288,11 +288,12 @@ function HomePageContent() {
               <Link
                 key={i}
                 href="/culture"
-                className="shrink-0 group"
+                className="shrink-0 group animate-in"
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
-                <div className="w-24 h-28 bg-white/10 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center hover:bg-white/20 hover:scale-105 cursor-pointer transition-all duration-300 border border-white/10">
-                  <span className="text-4xl mb-2 group-hover:scale-110 transition-transform">{country.flag}</span>
-                  <span className="text-white/80 text-xs font-medium">{country.name}</span>
+                <div className="w-24 h-28 bg-white/10 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center hover:bg-white/25 hover:scale-110 hover:-translate-y-2 cursor-pointer transition-all duration-300 ease-out border border-white/10 hover:border-white/30 hover:shadow-xl active:scale-100">
+                  <span className="text-4xl mb-2 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300">{country.flag}</span>
+                  <span className="text-white/80 text-xs font-medium group-hover:text-white transition-colors duration-300">{country.name}</span>
                 </div>
               </Link>
             ))}
@@ -340,20 +341,27 @@ function HomePageContent() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
+      <section className="py-16 bg-white dark:bg-gray-800 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '45', label: 'Sports', suffix: '+' },
-              { number: '12', label: 'Venues', suffix: '' },
-              { number: '46', label: 'Countries', suffix: '' },
-              { number: '10K', label: 'Athletes', suffix: '+' },
+              { number: '45', label: 'Sports', suffix: '+', icon: '🏆' },
+              { number: '12', label: 'Venues', suffix: '', icon: '🏟️' },
+              { number: '46', label: 'Countries', suffix: '', icon: '🌏' },
+              { number: '10K', label: 'Athletes', suffix: '+', icon: '🏃' },
             ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-qatar-maroon to-qatar-maroon-light bg-clip-text text-transparent mb-2">
-                  {stat.number}{stat.suffix}
+              <div 
+                key={i} 
+                className="text-center group animate-in cursor-default" 
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                <div className="relative inline-block mb-3">
+                  <span className="text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-2">{stat.icon}</span>
+                  <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-qatar-maroon to-qatar-maroon-light bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
+                    {stat.number}{stat.suffix}
+                  </div>
                 </div>
-                <div className="text-gray-500 dark:text-gray-400 font-medium">{stat.label}</div>
+                <div className="text-gray-500 dark:text-gray-400 font-medium group-hover:text-qatar-maroon dark:group-hover:text-qatar-gold transition-colors duration-300">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -408,51 +416,59 @@ function EventCard({ index }: { index: number }) {
   const event = events[index - 1];
 
   return (
-    <Link href="/events" className="group">
-      <Card className="overflow-hidden border-0 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-gray-800">
-        {/* Image area with gradient overlay */}
-        <div className="relative aspect-[4/3] bg-gradient-to-br from-qatar-maroon to-qatar-maroon-dark overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl group-hover:scale-110 transition-transform duration-500">{event.sport}</span>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+    <Link href="/events" className="group block animate-in" style={{ animationDelay: `${index * 0.1}s` }}>
+      <div className="card-glow">
+        <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.02] bg-white dark:bg-gray-800 active:scale-[0.98]">
+          {/* Image area with gradient overlay */}
+          <div className="relative aspect-[4/3] bg-gradient-to-br from-qatar-maroon via-qatar-maroon to-qatar-maroon-dark overflow-hidden">
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-qatar-gold/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 delay-100" />
+            </div>
+            
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-6xl group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 ease-out drop-shadow-lg">{event.sport}</span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-          {/* Badge */}
-          <div className="absolute top-3 end-3">
-            <span className={`px-3 py-1 rounded-full text-xs font-bold ${event.badgeColor}`}>
-              {event.badge}
-            </span>
+            {/* Badge with pulse animation */}
+            <div className="absolute top-3 end-3">
+              <span className={`px-3 py-1.5 rounded-full text-xs font-bold shadow-lg ${event.badgeColor} group-hover:scale-110 transition-transform duration-300`}>
+                {event.badge}
+              </span>
+            </div>
+
+            {/* Event info overlay with slide up effect */}
+            <div className="absolute bottom-0 inset-x-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="font-bold text-white text-lg mb-1 group-hover:text-qatar-gold transition-colors duration-300">
+                {event.name}
+              </h3>
+              <p className="text-white/80 text-sm flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                </svg>
+                {event.venue}
+              </p>
+            </div>
           </div>
 
-          {/* Event info overlay */}
-          <div className="absolute bottom-0 inset-x-0 p-4">
-            <h3 className="font-bold text-white text-lg mb-1 group-hover:text-qatar-gold transition-colors">
-              {event.name}
-            </h3>
-            <p className="text-white/80 text-sm flex items-center gap-1">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          {/* Card footer with enhanced interactions */}
+          <div className="p-4 flex items-center justify-between bg-white dark:bg-gray-800">
+            <div>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">Tomorrow, 14:00</p>
+              <p className="text-qatar-maroon dark:text-qatar-gold font-bold text-lg group-hover:scale-105 transition-transform duration-300 origin-left">
+                From {event.price} QAR
+              </p>
+            </div>
+            <div className="w-11 h-11 rounded-full bg-qatar-maroon/10 dark:bg-qatar-gold/10 flex items-center justify-center group-hover:bg-qatar-maroon group-hover:text-white dark:group-hover:bg-qatar-gold dark:group-hover:text-qatar-maroon-dark transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              {event.venue}
-            </p>
+            </div>
           </div>
-        </div>
-
-        {/* Card footer */}
-        <div className="p-4 flex items-center justify-between">
-          <div>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Tomorrow, 14:00</p>
-            <p className="text-qatar-maroon dark:text-qatar-gold font-bold text-lg">
-              From {event.price} QAR
-            </p>
-          </div>
-          <div className="w-10 h-10 rounded-full bg-qatar-maroon/10 dark:bg-qatar-gold/10 flex items-center justify-center group-hover:bg-qatar-maroon group-hover:text-white dark:group-hover:bg-qatar-gold dark:group-hover:text-qatar-maroon-dark transition-all">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </Link>
   );
 }
@@ -473,21 +489,31 @@ function QuickAccessCard({
   return (
     <Link
       href={href}
-      className="group relative overflow-hidden p-5 md:p-6 rounded-2xl bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 hover:border-transparent hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+      className="group relative overflow-hidden p-5 md:p-6 rounded-2xl bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 hover:border-transparent hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] active:scale-[0.98]"
     >
-      {/* Gradient overlay on hover */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+      {/* Gradient overlay on hover with smooth expansion */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out scale-95 group-hover:scale-100`} />
+      
+      {/* Animated glow behind */}
+      <div className={`absolute -inset-2 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`} />
 
       <div className="relative">
-        <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
-          {icon}
+        <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-xl transition-all duration-500 ease-out`}>
+          <span className="group-hover:scale-110 transition-transform duration-300">{icon}</span>
         </div>
-        <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-white transition-colors text-lg mb-1">
+        <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-white transition-colors duration-300 text-lg mb-1">
           {title}
         </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors">
+        <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-white/90 transition-colors duration-300">
           {description}
         </p>
+        
+        {/* Arrow indicator that appears on hover */}
+        <div className="absolute bottom-5 right-5 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
       </div>
     </Link>
   );
@@ -505,15 +531,15 @@ function TransportOption({
   eco: string;
 }) {
   return (
-    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 hover:bg-white/30 transition-all cursor-pointer group">
+    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 hover:bg-white/30 transition-all duration-300 cursor-pointer group hover:-translate-y-1 hover:shadow-lg active:scale-[0.97]">
       <div className="flex items-start justify-between mb-2">
-        <span className="text-3xl group-hover:scale-110 transition-transform">{icon}</span>
-        <span className="text-xs font-bold bg-white/30 px-2 py-1 rounded-full text-white">
+        <span className="text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
+        <span className="text-xs font-bold bg-white/30 px-2.5 py-1 rounded-full text-white group-hover:bg-white/50 group-hover:scale-105 transition-all duration-300">
           {eco}
         </span>
       </div>
-      <div className="font-semibold text-white">{label}</div>
-      <div className="text-sm text-white/70">{time} away</div>
+      <div className="font-semibold text-white group-hover:translate-x-0.5 transition-transform duration-300">{label}</div>
+      <div className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300">{time} away</div>
     </div>
   );
 }
